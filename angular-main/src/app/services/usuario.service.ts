@@ -6,14 +6,17 @@ import { Usuario } from "src/app/models/usuario.model";
 @Injectable({
   providedIn: 'root'
 })
+
 export class UsuarioService {
-  private apiUrl = 'http://localhost:8080/api/products';
+  private baseUrl = 'http://localhost:8081/api';
   constructor(private http: HttpClient) {}
 
   getUsuario(): Observable<Usuario> {
+    const url = `${this.baseUrl}/getUsuario`;
+    return this.http.get<Usuario>(url)
     //return this.http.getUsuario(this.apiUrl);
-    return this.http.get<Usuario>(this.apiUrl)
   }
+
 
   // Otros métodos para crear, actualizar y eliminar productos...
 }

@@ -9,5 +9,7 @@ import { RouterOutlet } from '@angular/router';
 export class DashboardComponent implements OnInit {
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
 }

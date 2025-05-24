@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {HttpClientModule} from "@angular/common/http";
+import {UsuarioService} from "./services/usuario.service";
 
 const routes: Routes = [
   {
@@ -18,7 +20,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),HttpClientModule],
+  providers:[UsuarioService],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
