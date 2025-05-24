@@ -1,0 +1,33 @@
+package app.archivosjson;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import app.objetos.Producto;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+
+public class ProductosJSON {
+
+    private static final ObjectMapper mapper = new ObjectMapper()
+            .enable(SerializationFeature.INDENT_OUTPUT);
+
+    public static void guardar(List<Producto> productos, String archivo) {
+        try {
+            mapper.writeValue(new File(archivo), productos);
+        } catch (IOException e) {
+            System.err.println("Error guardando productos: " + e.getMessage());
+        }
+    }
+
+    public static List<Producto> cargar(String archivo) {
+        try {
+            return mapper.readValue(new File(archivo),
+                    mapper.getTypeFactory().constructCollectionType(List.class, Producto.class));
+        } catch (IOException e) {
+            System.err.println("Error cargando productos: " + e.getMessage());
+            return List.of();
+        }
+    }
+}
