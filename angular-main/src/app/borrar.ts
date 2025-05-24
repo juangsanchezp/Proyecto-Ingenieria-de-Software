@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from './services/usuario.service'; // Ajusta la ruta según tu proyecto
-import { Usuario } from './models/usuario.model'; // Ajusta la ruta según tu proyecto
+import { UsuarioService } from '/src/app/services/usuario.service'; // Ajusta la ruta según tu proyecto
+import { Usuario } from '/src/app/models/usuario.model';
 
 @Component({
   selector: 'app-root',
