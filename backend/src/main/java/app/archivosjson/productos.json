@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "nombreProducto": "Camisa Oxford",
+    "categoria": "Trajes",
+    "descripcion": "Ideal para toda ocasión",
+    "imagenUrl": "https://example.com/img/ropa1.jpg",
+    "precio": 91.4
+  },
+  {
+    "id": 2,
+    "nombreProducto": "Pantalón Chino",
+    "categoria": "Trajes",
+    "descripcion": "Perfecta para clima frío",
+    "imagenUrl": "https://example.com/img/ropa2.jpg",
+    "precio": 116.43
+  },
+  {
+    "id": 3,
+    "nombreProducto": "Chaqueta de Cuero",
+    "categoria": "Pantalones",
+    "descripcion": "Perfecta para clima frío",
+    "imagenUrl": "https://example.com/img/ropa3.jpg",
+    "precio": 40.25
+  },
+  {
+    "id": 4,
+    "nombreProducto": "Suéter de Lana",
+    "categoria": "Abrigos",
+    "descripcion": "Ideal para toda ocasión",
+    "imagenUrl": "https://example.com/img/ropa4.jpg",
+    "precio": 30.41
+  },
+  {
+    "id": 5,
+    "nombreProducto": "Jeans Slim Fit",
+    "categoria": "Abrigos",
+    "descripcion": "Ideal para toda ocasión",
+    "imagenUrl": "https://example.com/img/ropa5.jpg",
+    "precio": 47.97
+  },
+  {
+    "id": 6,
+    "nombreProducto": "Camiseta Básica",
+    "categoria": "Camisas",
+    "descripcion": "Ideal para toda ocasión",
+    "imagenUrl": "https://example.com/img/ropa6.jpg",
+    "precio": 35.73
+  },
+  {
+    "id": 7,
+    "nombreProducto": "Blazer Casual",
+    "categoria": "Camisetas",
+    "descripcion": "Prenda cómoda y elegante",
+    "imagenUrl": "https://example.com/img/ropa7.jpg",
+    "precio": 60.11
+  },
+  {
+    "id": 8,
+    "nombreProducto": "Camisa Cuadros",
+    "categoria": "Abrigos",
+    "descripcion": "Perfecta para clima frío",
+    "imagenUrl": "https://example.com/img/ropa8.jpg",
+    "precio": 82.16
+  },
+  {
+    "id": 9,
+    "nombreProducto": "Short Deportivo",
+    "categoria": "Camisas",
+    "descripcion": "Diseño moderno y versátil",
+    "imagenUrl": "https://example.com/img/ropa9.jpg",
+    "precio": 83.87
+  },
+  {
+    "id": 10,
+    "nombreProducto": "Campera Impermeable",
+    "categoria": "Pantalones",
+    "descripcion": "Perfecta para clima frío",
+    "imagenUrl": "https://example.com/img/ropa10.jpg",
+    "precio": 64.44
+  },
+  {
+    "id": 11,
+    "nombreProducto": "Polo Clásico",
+    "categoria": "Pantalones",
+    "descripcion": "Diseño moderno y versátil",
+    "imagenUrl": "https://example.com/img/ropa11.jpg",
+    "precio": 79.46
+  },
+  {
+    "id": 12,
+    "nombreProducto": "Jogger Urbano",
+    "categoria": "Pantalones",
+    "descripcion": "Perfecta para clima frío",
+    "imagenUrl": "https://example.com/img/ropa12.jpg",
+    "precio": 26.06
+  },
+  {
+    "id": 13,
+    "nombreProducto": "Parka de Invierno",
+    "categoria": "Abrigos",
+    "descripcion": "Prenda cómoda y elegante",
+    "imagenUrl": "https://example.com/img/ropa13.jpg",
+    "precio": 93.06
+  },
+  {
+    "id": 14,
+    "nombreProducto": "Chaleco Acolchado",
+    "categoria": "Camisetas",
+    "descripcion": "Prenda cómoda y elegante",
+    "imagenUrl": "https://example.com/img/ropa14.jpg",
+    "precio": 113.78
+  },
+  {
+    "id": 15,
+    "nombreProducto": "Buzo con Capucha",
+    "categoria": "Camisetas",
+    "descripcion": "Estilo casual y urbano",
+    "imagenUrl": "https://example.com/img/ropa15.jpg",
+    "precio": 63.15
+  },
+  {
+    "id": 16,
+    "nombreProducto": "Traje Formal",
+    "categoria": "Abrigos",
+    "descripcion": "Perfecta para clima frío",
+    "imagenUrl": "https://example.com/img/ropa16.jpg",
+    "precio": 43.29
+  },
+  {
+    "id": 17,
+    "nombreProducto": "Remera Estampada",
+    "categoria": "Camisetas",
+    "descripcion": "Estilo casual y urbano",
+    "imagenUrl": "https://example.com/img/ropa17.jpg",
+    "precio": 32.2
+  },
+  {
+    "id": 18,
+    "nombreProducto": "Sweater Cuello V",
+    "categoria": "Camisetas",
+    "descripcion": "Diseño moderno y versátil",
+    "imagenUrl": "https://example.com/img/ropa18.jpg",
+    "precio": 79.59
+  },
+  {
+    "id": 19,
+    "nombreProducto": "Camisa Manga Corta",
+    "categoria": "Abrigos",
+    "descripcion": "Ideal para toda ocasión",
+    "imagenUrl": "https://example.com/img/ropa19.jpg",
+    "precio": 56.38
+  },
+  {
+    "id": 20,
+    "nombreProducto": "Cazadora Denim",
+    "categoria": "Camisetas",
+    "descripcion": "Diseño moderno y versátil",
+    "imagenUrl": "https://example.com/img/ropa20.jpg",
+    "precio": 89.97
+  }
+]

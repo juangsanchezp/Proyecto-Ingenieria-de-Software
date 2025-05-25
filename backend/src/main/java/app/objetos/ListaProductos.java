@@ -1,29 +1,42 @@
 package app.objetos;
 
+import app.archivosjson.ProductosJSON;
 import java.util.LinkedList;
+import java.util.List;
 
 public class ListaProductos {
     private LinkedList<Producto> productos;
 
+    // Constructor por defecto: lista vacía
     public ListaProductos() {
         this.productos = new LinkedList<>();
     }
-    public LinkedList<Producto> getProductos(){
+
+    // Constructor que carga productos desde un archivo JSON
+    public ListaProductos(String archivoJSON) {
+        List<Producto> cargados = ProductosJSON.cargar(archivoJSON);
+        this.productos = new LinkedList<>(cargados);
+    }
+
+    public LinkedList<Producto> getProductos() {
         return productos;
     }
-    public Producto buscarProducto(int idProducto){
-        Producto producBuscado=null;
-        for (Producto producto: productos){
-            if (producto.getId()==idProducto){
-                producBuscado=producto;
+
+    public Producto buscarProducto(int idProducto) {
+        for (Producto producto : productos) {
+            if (producto.getId() == idProducto) {
+                return producto;
             }
         }
-        return producBuscado;
+        return null;
     }
+
     public void agregarUsuario(Producto usuario) {
         productos.add(usuario);
     }
+
     public void eliminarUsuario(Producto usuario) {
         productos.remove(usuario);
     }
 }
+
