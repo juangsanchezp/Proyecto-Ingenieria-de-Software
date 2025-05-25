@@ -1,11 +1,21 @@
 package app.objetos;
 
 public class Usuario {
+    private String correo;
+    private String nombreUsuario;
     private String nombre;
     private String apellido;
     private String contraseña;
-    private String correo;
-    private String nombreUsuario;
+
+    public Usuario() {}
+
+    public Usuario(String correo, String nombreUsuario, String nombre, String apellido, String contraseña) {
+        this.correo = correo;
+        this.nombreUsuario = nombreUsuario;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.contraseña = contraseña;
+    }
 
     public Usuario(String nombre) {
         this.nombre = nombre;

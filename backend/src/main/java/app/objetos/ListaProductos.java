@@ -31,12 +31,13 @@ public class ListaProductos {
         return null;
     }
 
-    public void agregarUsuario(Producto usuario) {
-        productos.add(usuario);
+    public void agregarProducto(Producto producto) {
+        productos.add(producto);
+        //ProductosJSON.guardar(,producto);
     }
 
-    public void eliminarUsuario(Producto usuario) {
-        productos.remove(usuario);
+    public void eliminarProducto(Producto producto) {
+        productos.remove(producto);
     }
 }
 
