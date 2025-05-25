@@ -20,7 +20,7 @@ public class ProductoController {
     //Obtener Productos
     @GetMapping("/getProductos")
     public LinkedList<Producto> getProductos(){
-        ProductosJSON.cargar("backend/src/main/java/app/archivosjson/productos.json");
+
         return listaProductos.getProductos();
 
     }
