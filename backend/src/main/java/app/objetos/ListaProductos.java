@@ -6,6 +6,7 @@ import java.util.List;
 
 public class ListaProductos {
     private LinkedList<Producto> productos;
+    private String urlJson="backend/src/main/java/app/archivosjson/productos.json";
 
     // Constructor por defecto: lista vacía
     public ListaProductos() {
@@ -33,11 +34,14 @@ public class ListaProductos {
 
     public void agregarProducto(Producto producto) {
         productos.add(producto);
-        //ProductosJSON.guardar(,producto);
+        ProductosJSON.guardar(productos,urlJson);
     }
 
     public void eliminarProducto(Producto producto) {
         productos.remove(producto);
+        ProductosJSON.guardar(productos,urlJson);
     }
+
+
 }
 
