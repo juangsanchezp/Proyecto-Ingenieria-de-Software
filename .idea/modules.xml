@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Proyecto-Ingenieria-de-Software.iml" filepath="$PROJECT_DIR$/.idea/Proyecto-Ingenieria-de-Software.iml" />
       <module fileurl="file://$PROJECT_DIR$/angular-main/frontend.iml" filepath="$PROJECT_DIR$/angular-main/frontend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frontend-New/frontend-New.iml" filepath="$PROJECT_DIR$/frontend-New/frontend-New.iml" />
     </modules>
   </component>
 </project>
