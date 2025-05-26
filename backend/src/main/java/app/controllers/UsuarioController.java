@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 //http://127.0.0.1:8080/api/getUsuario solo para ver si agarra 
 
 @RestController
-@RequestMapping("/api") //nombredel api en general
+@RequestMapping("/apiUsuarios") //nombredel api en general
 @CrossOrigin(origins = "http://localhost:4200") // Permite Angular local
 
 public class UsuarioController {
