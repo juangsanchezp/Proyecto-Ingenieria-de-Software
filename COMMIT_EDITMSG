@@ -1,0 +1,30 @@
+ se agrego el logIn y SignUp
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# interactive rebase in progress; onto 1afb742
+# Last command done (1 command done):
+#     se agrego el logIn y SignUp
+# No commands remaining.
+# You are currently rebasing branch 'main' on '1afb742'.
+#
+# Changes to be committed:
+#	new file:   .DS_Store
+#	modified:   frontend-New.rar
+#	modified:   frontend-New/angular.json
+#	modified:   frontend-New/package-lock.json
+#	modified:   frontend-New/src/app/app.component.ts
+#	modified:   frontend-New/src/app/app.routes.ts
+#	modified:   frontend-New/src/app/carrito/carrito.component.html
+#	new file:   frontend-New/src/app/login/login.component.css
+#	new file:   frontend-New/src/app/login/login.component.html
+#	new file:   frontend-New/src/app/login/login.component.spec.ts
+#	new file:   frontend-New/src/app/login/login.component.ts
+#	modified:   frontend-New/src/app/shared/components/navbar/navbar.component.html
+#	new file:   frontend-New/src/app/signup/signup.component.css
+#	new file:   frontend-New/src/app/signup/signup.component.html
+#	new file:   frontend-New/src/app/signup/signup.component.spec.ts
+#	new file:   frontend-New/src/app/signup/signup.component.ts
+#	new file:   frontend-New/src/assets/icons8-carrito-de-compras-100.png
+#
