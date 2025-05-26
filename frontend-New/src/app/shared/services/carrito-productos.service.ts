@@ -11,20 +11,17 @@ export class CartService {
   constructor() { }
 
   addToCart(product: Producto, cantidad: number): string {
-    // Validar si la cantidad solicitada es suficiente
-    if (cantidad > product.cantidadDisponible) {
-      return 'No hay suficiente stock disponible.';
-    }
-
     const existingProduct = this.cart.find(item => item.producto.id === product.id);
+
     if (existingProduct) {
-      // Verificar si la cantidad total después de agregar excede el stock disponible
       if (existingProduct.cantidad + cantidad > product.cantidadDisponible) {
         return 'No hay suficiente stock disponible.';
       }
       existingProduct.cantidad += cantidad;
     } else {
-      // Agregar el producto al carrito con la cantidad deseada
+      if (cantidad > product.cantidadDisponible) {
+        return 'No hay suficiente stock disponible.';
+      }
       this.cart.push({ producto: product, cantidad: cantidad });
     }
     return 'Producto agregado al carrito.';
@@ -39,6 +36,7 @@ export class CartService {
     item.cantidad -= 1;
   }
   }
+
   getCart() {
     return this.cart;
   }

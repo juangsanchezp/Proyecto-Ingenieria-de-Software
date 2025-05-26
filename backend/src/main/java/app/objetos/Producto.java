@@ -7,18 +7,18 @@ public class Producto {
     private String descripcion;
     private String imagenUrl;
     private float precio;
-    private int cantidad; // NUEVO
+    private int cantidadDisponible; // NUEVO
 
     public Producto() {}
 
-    public Producto(int id, String nombreProducto, String categoria, String descripcion, String imagenUrl, float precio, int cantidad) {
+    public Producto(int id, String nombreProducto, String categoria, String descripcion, String imagenUrl, float precio, int cantidadDisponible) {
         this.id = id;
         this.nombreProducto = nombreProducto;
         this.categoria = categoria;
         this.descripcion = descripcion;
         this.imagenUrl = imagenUrl;
         this.precio = precio;
-        this.cantidad = cantidad; // NUEVO
+        this.cantidadDisponible = cantidadDisponible; // NUEVO
     }
 
     public int getId() {
@@ -69,11 +69,11 @@ public class Producto {
         this.precio = precio;
     }
 
-    public int getCantidad() {
-        return cantidad;
+    public int getCantidadDisponible() {
+        return cantidadDisponible;
     }
 
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
+    public void setCantidadDisponible(int cantidad) {
+        this.cantidadDisponible = cantidad;
     }
 }
