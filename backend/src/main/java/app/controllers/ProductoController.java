@@ -11,6 +11,8 @@ import java.util.LinkedList;
 import java.util.Optional;
 
 //http://127.0.0.1:8081/apiProductos/getProductos si copian esto y lo colocan en el navegador ven si agarra el metodo
+
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/apiProductos")
 public class ProductoController {

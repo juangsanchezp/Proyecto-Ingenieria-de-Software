@@ -6,6 +6,7 @@ public class Usuario {
     private String nombre;
     private String apellido;
     private String contraseña;
+    private ListaProductos carritoProductos;
 
     public Usuario() {}
 
@@ -58,5 +59,13 @@ public class Usuario {
 
     public void setNombreUsuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
+    }
+
+    public ListaProductos getCarritoProductos() {
+        return carritoProductos;
+    }
+
+    public void setCarritoProductos(ListaProductos carritoProductos) {
+        this.carritoProductos = carritoProductos;
     }
 }
