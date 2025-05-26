@@ -8,7 +8,7 @@ import { CurrencyPipe } from '@angular/common';
   selector: 'app-producto-carrito',
   imports: [RouterLink,CurrencyPipe],
   templateUrl: './producto-carrito.component.html',
-  
+
 })
 
 export class ProductoCarritoComponent implements OnInit {
@@ -26,10 +26,10 @@ export class ProductoCarritoComponent implements OnInit {
 
   private actualizarTotal(): void {
     this.total= this.productoCarrito().producto!.precio * this.productoCarrito().cantidad;
-    
+
   }
 
-  
+
   incrementarAlCarrito(): void {
     //Esto se puede cambiar para trabajarlo directamente con el back
     //pero por ahora lo mantendre en localstorage
@@ -46,10 +46,9 @@ export class ProductoCarritoComponent implements OnInit {
   }
 
   removerDelCarrito(): void {
-    this.carritoService.removeFromCart(this.productoCarrito().producto!.id);  
+    this.carritoService.removeFromCart(this.productoCarrito().producto!.id);
     this.updateCartEvent.emit(); // Emitir el evento para actualizar el carrito
   }
 
 }
 
- 

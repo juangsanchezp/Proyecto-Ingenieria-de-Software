@@ -9,31 +9,31 @@ import { CartService } from '../shared/services/carrito-productos.service';
   selector: 'app-detalles-producto',
   imports: [CurrencyPipe],
   templateUrl: './detalles-producto.component.html',
-  
+
 })
 export class DetallesProductoComponent implements OnInit {
   //Esto hace que angular provea los id del producto
   id=input<string>("");
   // Esto hace que angular provea el producto completo
   producto?:Producto;
-  
-  constructor(private productoService: ProductoService,private carritoService: CartService) {} // Inyecta el servicio
- 
-  ngOnInit():void {
 
+  constructor(private productoService: ProductoService,private carritoService: CartService) {} // Inyecta el servicio
+
+  ngOnInit():void {
+    initFlowbite();
     //Aquí se obtiene el producto por su ID con el back
     this.productoService.getProductoById(this.id()).subscribe(producto => {
       this.producto = producto;
     });
-    
+
   }
 
   agregarAlCarrito(): void {
     //Esto se puede cambiar para trabajarlo directamente con el back
     //pero por ahora lo mantendre en localstorage
     console.log(this.carritoService.addToCart(this.producto!, 1));
-    
-    
+
+
 
   }
 
