@@ -1,23 +1,39 @@
 package app.controllers;
 
+import app.objetos.ListaUsuarios;
 import app.objetos.Usuario;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-//http://127.0.0.1:8080/api/getUsuario solo para ver si agarra 
+import java.util.Optional;
 
 @RestController
-@RequestMapping("/apiUsuarios") //nombredel api en general
-@CrossOrigin(origins = "http://localhost:4200") // Permite Angular local
-
+@RequestMapping("/apiUsuarios")
+@CrossOrigin(origins = "http://localhost:4200")
 public class UsuarioController {
+
+    ListaUsuarios listaUsuarios = new ListaUsuarios(); // Instancia compartida
+
     @GetMapping("/getUsuario")
     public ResponseEntity<Usuario> getUsuario(){
-        //return new Usuario("Pepito");
-        Usuario usu =new Usuario("Jose");
+        Usuario usu = new Usuario("Jose");
         return ResponseEntity.ok(usu);
     }
+
+    @PostMapping("/agregarUsuario")
+    public ResponseEntity<Usuario> agregarUsuario(@RequestBody Usuario usuario) {
+        listaUsuarios.agregarUsuario(usuario);
+        return ResponseEntity.ok(usuario);
+    }
+
+    @DeleteMapping("/eliminarUsuario/{nombreUsuario}")
+    public ResponseEntity<Void> eliminarUsuario(@PathVariable String nombreUsuario) {
+        Usuario usuario = listaUsuarios.buscarUsuario(nombreUsuario);
+        if (usuario == null) {
+            return ResponseEntity.notFound().build();
+        }
+        listaUsuarios.eliminarUsuario(usuario);
+        return ResponseEntity.ok().build();
+    }
 }
+
