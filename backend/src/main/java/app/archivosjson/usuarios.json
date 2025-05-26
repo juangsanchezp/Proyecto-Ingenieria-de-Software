@@ -1,0 +1,142 @@
+[
+  {
+    "correo": "ana.perez@example.com",
+    "nombreUsuario": "ana123",
+    "nombre": "Ana",
+    "apellido": "Pérez",
+    "contraseña": "anaPass123"
+  },
+  {
+    "correo": "mario.gomez@example.com",
+    "nombreUsuario": "marioG",
+    "nombre": "Mario",
+    "apellido": "Gómez",
+    "contraseña": "mario2024"
+  },
+  {
+    "correo": "luis.rojas@example.com",
+    "nombreUsuario": "lroj",
+    "nombre": "Luis",
+    "apellido": "Rojas",
+    "contraseña": "lrojas!23"
+  },
+  {
+    "correo": "carla.fernandez@example.com",
+    "nombreUsuario": "carlaF",
+    "nombre": "Carla",
+    "apellido": "Fernández",
+    "contraseña": "cfpass"
+  },
+  {
+    "correo": "juan.martinez@example.com",
+    "nombreUsuario": "jmartinez",
+    "nombre": "Juan",
+    "apellido": "Martínez",
+    "contraseña": "juanMpass"
+  },
+  {
+    "correo": "sofia.lopez@example.com",
+    "nombreUsuario": "sofiaL",
+    "nombre": "Sofía",
+    "apellido": "López",
+    "contraseña": "sofia2024"
+  },
+  {
+    "correo": "pedro.ramirez@example.com",
+    "nombreUsuario": "pedroR",
+    "nombre": "Pedro",
+    "apellido": "Ramírez",
+    "contraseña": "pedro*321"
+  },
+  {
+    "correo": "lucia.alvarez@example.com",
+    "nombreUsuario": "luciaA",
+    "nombre": "Lucía",
+    "apellido": "Álvarez",
+    "contraseña": "lucy@456"
+  },
+  {
+    "correo": "diego.sanchez@example.com",
+    "nombreUsuario": "dsanchez",
+    "nombre": "Diego",
+    "apellido": "Sánchez",
+    "contraseña": "dspass987"
+  },
+  {
+    "correo": "valeria.torres@example.com",
+    "nombreUsuario": "valet",
+    "nombre": "Valeria",
+    "apellido": "Torres",
+    "contraseña": "torresVal"
+  },
+  {
+    "correo": "martin.reyes@example.com",
+    "nombreUsuario": "martinR",
+    "nombre": "Martín",
+    "apellido": "Reyes",
+    "contraseña": "martin2023"
+  },
+  {
+    "correo": "florencia.mendez@example.com",
+    "nombreUsuario": "florM",
+    "nombre": "Florencia",
+    "apellido": "Méndez",
+    "contraseña": "fmp@ss"
+  },
+  {
+    "correo": "carlos.diaz@example.com",
+    "nombreUsuario": "cdiaz",
+    "nombre": "Carlos",
+    "apellido": "Díaz",
+    "contraseña": "cd1234"
+  },
+  {
+    "correo": "mariana.vera@example.com",
+    "nombreUsuario": "marivera",
+    "nombre": "Mariana",
+    "apellido": "Vera",
+    "contraseña": "mv2025"
+  },
+  {
+    "correo": "javier.molina@example.com",
+    "nombreUsuario": "javmol",
+    "nombre": "Javier",
+    "apellido": "Molina",
+    "contraseña": "javpass"
+  },
+  {
+    "correo": "catalina.bustos@example.com",
+    "nombreUsuario": "catab",
+    "nombre": "Catalina",
+    "apellido": "Bustos",
+    "contraseña": "cb!pass"
+  },
+  {
+    "correo": "fernando.castillo@example.com",
+    "nombreUsuario": "fercast",
+    "nombre": "Fernando",
+    "apellido": "Castillo",
+    "contraseña": "fc1234"
+  },
+  {
+    "correo": "isabel.romero@example.com",
+    "nombreUsuario": "isaR",
+    "nombre": "Isabel",
+    "apellido": "Romero",
+    "contraseña": "isapass321"
+  },
+  {
+    "correo": "nicolas.ibarra@example.com",
+    "nombreUsuario": "nicoI",
+    "nombre": "Nicolás",
+    "apellido": "Ibarra",
+    "contraseña": "ni!barra"
+  },
+  {
+    "correo": "pamela.garcia@example.com",
+    "nombreUsuario": "pamg",
+    "nombre": "Pamela",
+    "apellido": "García",
+    "contraseña": "pam321"
+  }
+]
