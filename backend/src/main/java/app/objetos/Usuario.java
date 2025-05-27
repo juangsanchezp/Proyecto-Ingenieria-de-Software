@@ -5,17 +5,17 @@ public class Usuario {
     private String nombreUsuario;
     private String nombre;
     private String apellido;
-    private String contraseña;
+    private String contrasena;
     private ListaProductos carritoProductos;
 
     public Usuario() {}
 
-    public Usuario(String correo, String nombreUsuario, String nombre, String apellido, String contraseña) {
+    public Usuario(String correo, String nombreUsuario, String nombre, String apellido, String contrasena) {
         this.correo = correo;
         this.nombreUsuario = nombreUsuario;
         this.nombre = nombre;
         this.apellido = apellido;
-        this.contraseña = contraseña;
+        this.contrasena = contrasena;
     }
 
     public Usuario(String nombre) {
@@ -37,12 +37,12 @@ public class Usuario {
         this.apellido = apellido;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasena() {
+        return contrasena;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
     public String getCorreo() {
