@@ -44,4 +44,7 @@ export class CartService {
   clearCart() {
     this.cart = [];
   }
+  cantidadProductoEnCarrito(){
+    return this.cart.length;
+  }
 }
