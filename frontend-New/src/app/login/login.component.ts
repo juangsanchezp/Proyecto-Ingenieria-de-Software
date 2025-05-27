@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
-    // Aquí iría la lógica de inicio de sesión
+    // Aquí iría la lógica de login
     console.log('Inicio de sesión');
   }
 
