@@ -1,63 +1,51 @@
-import { Component, OnInit } from '@angular/core';
-import { Usuario } from '../shared/models/usuario.model';
-import { UsuarioService } from '../shared/services/usuario.services';
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  imports: [FormsModule, CommonModule],
+  styleUrls: ['./signup.component.css']
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent {
+  @ViewChild('nombreUsuarioInput') nombreUsuarioInput!: ElementRef<HTMLInputElement>;
+  @ViewChild('correoInput') correoInput!: ElementRef<HTMLInputElement>;
+  @ViewChild('contrasenaInput') contrasenaInput!: ElementRef<HTMLInputElement>;
+  @ViewChild('confirmacionInput') confirmacionInput!: ElementRef<HTMLInputElement>;
 
-  usuario: Usuario = {
-    correo: '',
-    nombreUsuario: '',
-    nombre: '',
-    apellido: '',
-    contrasena: ''
-  };
-  confirmarContrasena: string = '';
-  error: string = '';
-  exito: string = '';
-  emailError: string = '';
-  passwordError: string = '';
+  successMessage = '';
+  errorMessage = '';
 
-  constructor(private usuarioService: UsuarioService) { }
+  constructor(private authService: AuthService) {}
 
-  ngOnInit(): void {
-    initFlowbite();
-  }
+  onSubmit(event: Event): void {
+    event.preventDefault();
 
-  validateEmail(): void {
-    this.emailError = '';
-    if (this.usuario.correo && !this.usuario.correo.includes('@')) {
-      this.emailError = 'El correo electrónico debe contener al menos un "@"';
-    }
-  }
+    const nombreUsuario = this.nombreUsuarioInput.nativeElement.value;
+    const correo = this.correoInput.nativeElement.value;
+    const contrasena = this.contrasenaInput.nativeElement.value;
+    const confirmar = this.confirmacionInput.nativeElement.value;
 
-  onSubmit(): void {
-    this.error = '';
-    this.exito = '';
-    this.passwordError = '';
-
-    // Validaciones básicas
-    if (!this.usuario.nombreUsuario || !this.usuario.correo || !this.usuario.contrasena) {
-      this.error = 'Todos los campos son obligatorios.';
-      return;
-    }
-    if (this.usuario.contrasena !== this.confirmarContrasena) {
-      this.passwordError = 'Las contraseñas no coinciden.';
+    if (contrasena !== confirmar) {
+      this.errorMessage = '❌ Las contraseñas no coinciden';
+      this.successMessage = '';
       return;
     }
 
-    this.usuarioService.registrarUsuario(this.usuario).subscribe({
+    const nuevoUsuario = {
+      nombreUsuario,
+      correo,
+      contrasena
+    };
+
+    this.authService.registrar(nuevoUsuario).subscribe({
       next: () => {
-        this.exito = 'Usuario registrado exitosamente.';
+        this.successMessage = '✅ Usuario registrado con éxito';
+        this.errorMessage = '';
       },
-      error: () => {
-        this.error = 'Error al registrar el usuario.';
+      error: (err: any) => {
+        this.errorMessage = '❌ El usuario ya existe o hubo un error.';
+        this.successMessage = '';
+        console.error(err);
       }
     });
   }
