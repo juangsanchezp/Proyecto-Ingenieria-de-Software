@@ -5,7 +5,6 @@ import { AuthService } from '../shared/services/auth.service';
   selector: 'app-login',
   standalone: true,
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
   @ViewChild('usernameInput') usernameInput!: ElementRef<HTMLInputElement>;
