@@ -16,7 +16,10 @@ export class AppComponent {
 
   mostrarNavbar: boolean = true;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    //this.router.navigate(['/login']); // Redirige a la página de inicio de sesión
+  }
+
 
   ngOnInit(): void {
 

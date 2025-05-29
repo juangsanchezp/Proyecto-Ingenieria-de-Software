@@ -8,7 +8,7 @@ import { Usuario } from '../models/usuario.model';
 })
 export class UsuarioService {
   private apiUrl = 'http://localhost:8081/apiUsuarios';
-
+  private autenticado: boolean = false; // Variable para controlar el estado de autenticación
   constructor(private http: HttpClient) {}
 
   registrar(data: { nombreUsuario: string; correo: string; contrasena: string }): Observable<any> {
@@ -22,5 +22,14 @@ export class UsuarioService {
     return this.http.post(`${this.apiUrl}/login`, data);
   }
 
-  // Puedes agregar aquí el método de login
+  // Método para verificar si el usuario está autenticado
+  isAuthenticated(): boolean {
+    return this.autenticado;
+  }
+
+  // Método para establecer el estado de autenticación
+  setAuthenticated(estado: boolean): void {
+    this.autenticado = estado;
+  }
+
 }
