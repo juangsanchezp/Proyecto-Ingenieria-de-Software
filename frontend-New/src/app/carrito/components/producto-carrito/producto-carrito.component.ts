@@ -1,4 +1,27 @@
+import { Component, EventEmitter, input, OnInit, output, Output } from '@angular/core';
+import { ProductoCarrito } from '../../../shared/models/producto-carrito';
+import { CartService } from '../../../shared/services/carrito-productos.service';
+import { RouterLink } from '@angular/router';
+import { CurrencyPipe } from '@angular/common';
 
+@Component({
+  selector: 'app-producto-carrito',
+  imports: [RouterLink,CurrencyPipe],
+  templateUrl: './producto-carrito.component.html',
+
+})
+
+export class ProductoCarritoComponent implements OnInit {
+  constructor(private carritoService: CartService) {} // Inyecta el servicio
+
+  productoCarrito=input.required<ProductoCarrito>();
+  total: number = 0;
+
+  updateCartEvent = output<void>();
+
+  ngOnInit(): void {
+    this.actualizarTotal()
+  }
 
 
   private actualizarTotal(): void {
