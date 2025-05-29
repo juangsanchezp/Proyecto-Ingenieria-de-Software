@@ -21,7 +21,7 @@ public class Usuario {
     public Usuario(String nombre) {
         this.nombre = nombre;
     }
-
+    //getters y setters
     public String getNombre() {
         return nombre;
     }
