@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Producto } from '../models/producto.model'; // Ajusta la ruta de importación según sea necesario
 import { ProductoCarrito } from '../models/producto-carrito';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +11,8 @@ import { ProductoCarrito } from '../models/producto-carrito';
 export class CartService {
   private cart: ProductoCarrito[] = [];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
 
   addToCart(product: Producto, cantidad: number): string {
     const existingProduct = this.cart.find(item => item.producto.id === product.id);
@@ -52,6 +56,20 @@ export class CartService {
   cantidadProductoEnCarritoPorId(productoId: number): number {
     const item = this.cart.find(p => p.producto.id === productoId);
     return item ? item.cantidad : 0;
+  }
+
+  guardarCarrito(usuario: string): Observable<any> {
+    const carritoConvertido = this.cart.map(item => ({
+      ...item.producto,
+      cantidad: item.cantidad // Incluye la cantidad seleccionada por el usuario
+    }));
+
+    const payload = {
+      usuario,
+      carrito: carritoConvertido
+    };
+
+    return this.http.post('http://localhost:8080/guardarCarritoPorArchivo', payload);
   }
 
 }

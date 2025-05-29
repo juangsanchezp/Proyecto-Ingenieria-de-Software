@@ -2,11 +2,17 @@ package app.controllers;
 
 import app.objetos.ListaProductos;
 import app.objetos.Producto;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+
+import app.objetos.CarritoJSON;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
@@ -50,5 +56,20 @@ public class ProductoController {
         listaProductos.eliminarProducto(producto);
         return ResponseEntity.ok().build();
     }
+
+    @PostMapping("/guardarCarritoPorArchivo")
+    public ResponseEntity<String> guardarCarrito(@RequestBody Map<String, Object> payload) {
+        ObjectMapper mapper = new ObjectMapper();
+
+        try {
+            String usuario = (String) payload.get("usuario");
+            List<Producto> carrito = mapper.convertValue(payload.get("carrito"), new TypeReference<>() {});
+            CarritoJSON.guardarCarrito(usuario, carrito);
+            return ResponseEntity.ok("Archivo de carrito guardado como carrito-" + usuario + ".json");
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("Error al guardar archivo de carrito");
+        }
+    }
+
 }
 

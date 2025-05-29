@@ -1,8 +1,7 @@
-package app.archivosjson;
+package app.objetos;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import app.objetos.Usuario;
 
 import java.io.File;
 import java.io.IOException;

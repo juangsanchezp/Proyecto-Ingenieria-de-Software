@@ -1,6 +1,5 @@
 package app.objetos;
 
-import app.archivosjson.ProductosJSON;
 import java.util.LinkedList;
 import java.util.List;
 
