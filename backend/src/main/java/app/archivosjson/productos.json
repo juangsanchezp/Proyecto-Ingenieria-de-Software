@@ -2,7 +2,7 @@
   {
     "id": 1,
     "nombreProducto": "Camisa Oxford",
-    "categoria": "Trajes",
+    "categoria": "Camisas",
     "descripcion": "Ideal para toda ocasión",
     "imagenUrl": "http://localhost:8081/img/camisa_oxford.png",
     "precio": 91.4,
@@ -11,7 +11,7 @@
   {
     "id": 2,
     "nombreProducto": "Pantalón Chino",
-    "categoria": "Trajes",
+    "categoria": "Pantalones",
     "descripcion": "Perfecta para clima frío",
     "imagenUrl": "http://localhost:8081/img/pantalon_chino.png",
     "precio": 116.43,
@@ -20,7 +20,7 @@
   {
     "id": 3,
     "nombreProducto": "Chaqueta de Cuero",
-    "categoria": "Pantalones",
+    "categoria": "Abrigos",
     "descripcion": "Perfecta para clima frío",
     "imagenUrl": "http://localhost:8081/img/chaqueta_de_cuero.png",
     "precio": 40.25,
@@ -38,7 +38,7 @@
   {
     "id": 5,
     "nombreProducto": "Jeans Slim Fit",
-    "categoria": "Abrigos",
+    "categoria": "Pantalones",
     "descripcion": "Ideal para toda ocasión",
     "imagenUrl": "http://localhost:8081/img/jeans_slim_fit.png",
     "precio": 47.97,
@@ -56,7 +56,7 @@
   {
     "id": 7,
     "nombreProducto": "Blazer Casual",
-    "categoria": "Camisetas",
+    "categoria": "Abrigos",
     "descripcion": "Prenda cómoda y elegante",
     "imagenUrl": "http://localhost:8081/img/blazer_casual.png",
     "precio": 60.11,
@@ -65,7 +65,7 @@
   {
     "id": 8,
     "nombreProducto": "Camisa Cuadros",
-    "categoria": "Abrigos",
+    "categoria": "Camisas",
     "descripcion": "Perfecta para clima frío",
     "imagenUrl": "http://localhost:8081/img/camisa_cuadros.png",
     "precio": 82.16,
@@ -74,7 +74,7 @@
   {
     "id": 9,
     "nombreProducto": "Short Deportivo",
-    "categoria": "Camisas",
+    "categoria": "Pantalones",
     "descripcion": "Diseño moderno y versátil",
     "imagenUrl": "http://localhost:8081/img/short_deportivo.png",
     "precio": 83.87,
@@ -83,7 +83,7 @@
   {
     "id": 10,
     "nombreProducto": "Campera Impermeable",
-    "categoria": "Pantalones",
+    "categoria": "Abrigos",
     "descripcion": "Perfecta para clima frío",
     "imagenUrl": "http://localhost:8081/img/campera_impermeable.jpg",
     "precio": 64.44,
@@ -92,7 +92,7 @@
   {
     "id": 11,
     "nombreProducto": "Polo Clásico",
-    "categoria": "Pantalones",
+    "categoria": "Camisas",
     "descripcion": "Diseño moderno y versátil",
     "imagenUrl": "http://localhost:8081/img/polo_clasico.png",
     "precio": 79.46,
@@ -119,7 +119,7 @@
   {
     "id": 14,
     "nombreProducto": "Chaleco Acolchado",
-    "categoria": "Camisetas",
+    "categoria": "Abrigos",
     "descripcion": "Prenda cómoda y elegante",
     "imagenUrl": "http://localhost:8081/img/chaleco_acolchado.png",
     "precio": 113.78,
@@ -128,7 +128,7 @@
   {
     "id": 15,
     "nombreProducto": "Buzo con Capucha",
-    "categoria": "Camisetas",
+    "categoria": "Abrigos",
     "descripcion": "Estilo casual y urbano",
     "imagenUrl": "http://localhost:8081/img/buzo_con_capucha.png",
     "precio": 63.15,
@@ -137,7 +137,7 @@
   {
     "id": 16,
     "nombreProducto": "Traje Formal",
-    "categoria": "Abrigos",
+    "categoria": "Trajes",
     "descripcion": "Perfecta para clima frío",
     "imagenUrl": "http://localhost:8081/img/traje_formal.png",
     "precio": 43.29,
@@ -146,7 +146,7 @@
   {
     "id": 17,
     "nombreProducto": "Remera Estampada",
-    "categoria": "Camisetas",
+    "categoria": "Camisas",
     "descripcion": "Estilo casual y urbano",
     "imagenUrl": "http://localhost:8081/img/remera_estampada.png",
     "precio": 32.2,
@@ -155,7 +155,7 @@
   {
     "id": 18,
     "nombreProducto": "Sweater Cuello V",
-    "categoria": "Camisetas",
+    "categoria": "Abrigos",
     "descripcion": "Diseño moderno y versátil",
     "imagenUrl": "http://localhost:8081/img/sweater_cuello_v.png",
     "precio": 79.59,
@@ -164,7 +164,7 @@
   {
     "id": 19,
     "nombreProducto": "Camisa Manga Corta",
-    "categoria": "Abrigos",
+    "categoria": "Camisas",
     "descripcion": "Ideal para toda ocasión",
     "imagenUrl": "http://localhost:8081/img/camisa_manga_corta.png",
     "precio": 56.38,
@@ -173,7 +173,7 @@
   {
     "id": 20,
     "nombreProducto": "Cazadora Denim",
-    "categoria": "Camisetas",
+    "categoria": "Abrigos",
     "descripcion": "Diseño moderno y versátil",
     "imagenUrl": "http://localhost:8081/img/cazadora_denim.png",
     "precio": 89.97,

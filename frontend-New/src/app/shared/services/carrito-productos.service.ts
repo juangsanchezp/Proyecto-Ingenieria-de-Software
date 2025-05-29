@@ -30,11 +30,12 @@ export class CartService {
   removeFromCart(productoId: number) {
     this.cart = this.cart.filter(item => item.producto.id !== productoId);
   }
+
   decreaseProductFromCart(productoId: number) {
-  const item = this.cart.find(p => p.producto.id === productoId);
-  if (item && item.cantidad > 1) {
-    item.cantidad -= 1;
-  }
+    const item = this.cart.find(p => p.producto.id === productoId);
+    if (item && item.cantidad > 1) {
+      item.cantidad -= 1;
+    }
   }
 
   getCart() {
@@ -47,4 +48,10 @@ export class CartService {
   cantidadProductoEnCarrito(){
     return this.cart.length;
   }
+
+  cantidadProductoEnCarritoPorId(productoId: number): number {
+    const item = this.cart.find(p => p.producto.id === productoId);
+    return item ? item.cantidad : 0;
+  }
+
 }

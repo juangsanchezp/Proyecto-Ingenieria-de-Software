@@ -11,8 +11,15 @@ export class UsuarioService {
 
   constructor(private http: HttpClient) {}
 
-  registrarUsuario(usuario: Usuario): Observable<Usuario> {
-    return this.http.post<Usuario>(`${this.apiUrl}/agregarUsuario`, usuario);
+  registrar(data: { nombreUsuario: string; correo: string; contrasena: string }): Observable<any> {
+    return this.http.post('http://localhost:8081/apiUsuarios/registrarUsuario', data, {
+      responseType: 'text'
+    });
+  }
+
+  // POST típico para login (ajústalo a tu lógica)
+  login(data: { nombreUsuario: string; contrasena: string }): Observable<any> {
+    return this.http.post(`${this.apiUrl}/login`, data);
   }
 
   // Puedes agregar aquí el método de login

@@ -17,6 +17,7 @@ export class ProductoCarritoComponent implements OnInit {
   productoCarrito=input.required<ProductoCarrito>();
   total: number = 0;
 
+  // Evento para actualizar el carrito
   updateCartEvent = output<void>();
 
   ngOnInit(): void {

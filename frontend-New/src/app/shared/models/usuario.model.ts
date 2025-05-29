@@ -1,4 +1,5 @@
 import {Producto} from './producto.model';
+import {ProductoCarrito} from './producto-carrito';
 
 export interface Usuario {
   correo: string;
@@ -6,5 +7,5 @@ export interface Usuario {
   nombre: string;
   apellido: string;
   contrasena: string;
-  carritoProductos:Producto[];
+  carritoProductos: ProductoCarrito[];
 }

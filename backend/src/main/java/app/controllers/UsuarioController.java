@@ -1,7 +1,9 @@
 package app.controllers;
 
+import app.archivosjson.UsuariosJSON;
 import app.objetos.ListaUsuarios;
 import app.objetos.Usuario;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,5 +37,29 @@ public class UsuarioController {
         listaUsuarios.eliminarUsuario(usuario);
         return ResponseEntity.ok().build();
     }
+
+    @PostMapping("/login")
+    public ResponseEntity<Usuario> login(@RequestBody Usuario userLogin) {
+
+        if(listaUsuarios.existeUsuario(userLogin.getNombreUsuario(), userLogin.getContrasena())){
+            return ResponseEntity.ok(userLogin); // Login válido
+        }
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();// Login inválido
+
+    }
+
+    @PostMapping("/registrarUsuario")
+    public ResponseEntity<String> registrar(@RequestBody Usuario nuevoUsuario) {
+
+        // Verificar si el usuario ya existe
+        if (listaUsuarios.agregarUsuario(nuevoUsuario)) {
+            return ResponseEntity.ok("Usuario registrado con éxito.");
+        }
+        // Si el usuario ya existe, devolver un error
+        return ResponseEntity.status(HttpStatus.CONFLICT).body("El usuario ya existe.");
+
+
+    }
+
 }
 

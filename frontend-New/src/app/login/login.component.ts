@@ -1,20 +1,48 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { UsuarioService } from '../shared/services/usuario.services';
+import {Router, RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-login',
+  standalone: true,
   templateUrl: './login.component.html',
-
+  imports:[RouterLink]
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
+  @ViewChild('usernameInput') usernameInput!: ElementRef<HTMLInputElement>;
+  @ViewChild('passwordInput') passwordInput!: ElementRef<HTMLInputElement>;
 
-  constructor() { }
+  successMessage = '';
+  errorMessage = '';
 
-  ngOnInit(): void {
+  constructor(private usuarioService: UsuarioService ,
+              private router:Router) {}
+
+  onSubmit(event: Event): void {
+    event.preventDefault();
+
+    const loginData = {
+      nombreUsuario: this.usernameInput.nativeElement.value,
+      contrasena: this.passwordInput.nativeElement.value
+    };
+
+    this.usuarioService.login(loginData).subscribe({
+      next: (res) => {
+        this.successMessage = '✅ Inicio de sesión exitoso';
+        this.errorMessage = '';
+
+        // Limpia los campos opcionalmente
+
+        this.passwordInput.nativeElement.value = '';
+
+        // Redirige al usuario al home
+        this.router.navigate(['/home']);
+
+      },
+      error: (err) => {
+        this.successMessage = '';
+        this.errorMessage = '❌ Usuario o contraseña incorrecta';
+      }
+    });
   }
-
-  onSubmit(): void {
-    // Aquí iría la lógica de login
-    console.log('Inicio de sesión');
-  }
-
 }

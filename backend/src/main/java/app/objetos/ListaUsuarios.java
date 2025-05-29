@@ -28,13 +28,34 @@ public class ListaUsuarios {
         return null;
     }
 
-    public void agregarUsuario(Usuario usuario) {
+    public boolean agregarUsuario(Usuario usuario) {
+
+        for (Usuario usu : usuarios) {
+            if (usu.getNombreUsuario().equals(usuario.getNombreUsuario()) || usu.getCorreo().equals(usuario.getCorreo())) {
+                return false;
+            }
+        }
+        // Si no existe, se agrega el usuario
         usuarios.add(usuario);
         UsuariosJSON.guardar(usuarios, urlJson); // Guardar al archivo
+        return true; // Usuario agregado exitosamente);
+
     }
 
     public void eliminarUsuario(Usuario usuario) {
         usuarios.remove(usuario);
         UsuariosJSON.guardar(usuarios, urlJson); // Guardar al archivo
     }
+
+    public boolean existeUsuario(String nombreUsuario , String contrasena) {
+        for (Usuario usu : usuarios) {
+            if (usu.getNombreUsuario().equals(nombreUsuario) && usu.getContrasena().equals(contrasena)) {
+                return true; // Usuario encontrado
+            }
+        }
+        return false; // Usuario no encontrado
+    }
+
+
+
 }
