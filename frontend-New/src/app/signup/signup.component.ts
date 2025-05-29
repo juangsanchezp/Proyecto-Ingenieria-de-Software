@@ -44,7 +44,11 @@ export class SignupComponent {
       next: () => {
         this.successMessage = '✅ Usuario registrado con éxito';
         this.errorMessage = '';
-        this.router.navigate(['/login']);
+
+        setTimeout(() => {
+          this.router.navigate(['/login']);
+        }, 2000);
+
 
       },
       error: (err: any) => {

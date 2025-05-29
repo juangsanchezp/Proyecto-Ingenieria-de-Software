@@ -166,4 +166,18 @@
   "apellido" : null,
   "contrasena" : "1234",
   "carritoProductos" : null
+}, {
+  "correo" : "aaa@aaa",
+  "nombreUsuario" : "jose",
+  "nombre" : null,
+  "apellido" : null,
+  "contrasena" : "4321",
+  "carritoProductos" : null
+}, {
+  "correo" : "pedro@a",
+  "nombreUsuario" : "pedro",
+  "nombre" : null,
+  "apellido" : null,
+  "contrasena" : "1234",
+  "carritoProductos" : null
 } ]
