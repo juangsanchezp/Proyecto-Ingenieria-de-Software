@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterEvent, RouterLink } from '@angular/router';
 import {CartService} from '../../services/carrito-productos.service';
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterLink],
+  imports: [RouterLink,CommonModule],
   templateUrl: './navbar.component.html',
 })
 export class NavbarComponent {

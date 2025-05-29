@@ -45,8 +45,8 @@ export class CartService {
   clearCart() {
     this.cart = [];
   }
-  cantidadProductoEnCarrito(){
-    return this.cart.length;
+  cantidadProductoEnCarrito(): number {
+    return this.cart.reduce((total, item) => total + item.cantidad, 0);
   }
 
   cantidadProductoEnCarritoPorId(productoId: number): number {
