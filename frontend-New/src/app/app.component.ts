@@ -4,6 +4,7 @@ import { HomeComponent } from "./home/home.component";
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import {filter} from 'rxjs';
 import {CommonModule} from '@angular/common';
+import {UsuarioService} from './shared/services/usuario.services';
 
 @Component({
   selector: 'app-root',
@@ -16,8 +17,11 @@ export class AppComponent {
 
   mostrarNavbar: boolean = true;
 
-  constructor(private router: Router) {
-    //this.router.navigate(['/login']); // Redirige a la página de inicio de sesión
+  constructor(private router: Router , private usuarioService: UsuarioService) {
+
+
+
+
   }
 
 

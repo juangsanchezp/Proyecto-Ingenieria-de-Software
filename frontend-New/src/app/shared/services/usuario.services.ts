@@ -9,6 +9,8 @@ import { Usuario } from '../models/usuario.model';
 export class UsuarioService {
   private apiUrl = 'http://localhost:8081/apiUsuarios';
   private autenticado: boolean = false; // Variable para controlar el estado de autenticación
+  private idUsuario: string="";// Nombre del usuario que ha iniciado sesion
+
   constructor(private http: HttpClient) {}
 
   registrar(data: { nombreUsuario: string; correo: string; contrasena: string }): Observable<any> {
@@ -28,8 +30,13 @@ export class UsuarioService {
   }
 
   // Método para establecer el estado de autenticación
-  setAuthenticated(estado: boolean): void {
+  setAuthenticated(estado: boolean, nombreUsu: string): void {
     this.autenticado = estado;
+    this.idUsuario= nombreUsu; // Guarda el nombre del usuario autenticado
+  }
+  cerrarSesion(): void {
+    this.idUsuario="";
+    this.autenticado=false;
   }
 
 }

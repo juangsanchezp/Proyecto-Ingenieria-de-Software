@@ -35,6 +35,9 @@ export class LoginComponent {
 
         this.passwordInput.nativeElement.value = '';
 
+        //Estado de inicio de sesion igual a true
+        this.usuarioService.setAuthenticated(true,loginData.nombreUsuario);
+
         // Redirige al usuario al home
         this.router.navigate(['/home']);
 
