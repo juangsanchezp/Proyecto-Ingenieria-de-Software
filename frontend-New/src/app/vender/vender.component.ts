@@ -1,8 +1,11 @@
 
 import {ProductoCarrito} from '../shared/models/producto-carrito';
 import {ProductoVenderComponent} from './components/producto-vender/producto-vender.component';
-import {CartService} from '../shared/services/carrito-productos.service';
+
 import {Component, OnInit} from '@angular/core';
+import {ProductoService} from '../shared/services/producto.services';
+import {UsuarioService} from '../shared/services/usuario.services';
+import {Producto} from '../shared/models/producto.model';
 
 
 @Component({
@@ -13,8 +16,9 @@ import {Component, OnInit} from '@angular/core';
 })
 export class VenderComponent implements OnInit {
 
-  productosVender:ProductoCarrito[]= [];
-  constructor(private carritoService: CartService) {}
+  productosVender:Producto[]= [];
+  constructor(private productoService: ProductoService ,
+              private usuarioService: UsuarioService) {}
 
 
   ngOnInit(): void {
@@ -25,7 +29,11 @@ export class VenderComponent implements OnInit {
 
 
   actualizarProductosVender(): void {
-    this.productosVender = this.carritoService.getCart();
+
+    this.productoService.getProductos().subscribe(productos => {
+      const proveedorActual = this.usuarioService.getIdUsuario(); // El usuario autenticado
+      this.productosVender = productos.filter(producto => producto.proveedorUsuario === proveedorActual);
+    });
   }
 
 

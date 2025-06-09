@@ -2,9 +2,13 @@ package app.controllers;
 
 import app.objetos.ListaProductos;
 import app.objetos.Producto;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Optional;
 
@@ -50,5 +54,61 @@ public class ProductoController {
         listaProductos.eliminarProducto(producto);
         return ResponseEntity.ok().build();
     }
+
+    // Actualizar un producto por su ID
+    @PutMapping(value = "/actualizarProducto/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<Producto> actualizarProducto(
+            @PathVariable int id,
+            @RequestParam("nombreProducto") String nombreProducto,
+            @RequestParam("categoria") String categoria,
+            @RequestParam("descripcion") String descripcion,
+            @RequestParam("precio") float precio,
+            @RequestParam("cantidadDisponible") Integer cantidadDisponible,
+            @RequestParam("proveedorUsuario") String proveedorUsuario,
+            @RequestPart(value = "imagen", required = false) MultipartFile imagen
+    ) {
+        Producto productoExistente = listaProductos.buscarProducto(id);
+
+        if (productoExistente == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+
+
+        // Actualiza los campos
+        productoExistente.setNombreProducto(nombreProducto);
+        productoExistente.setCategoria(categoria);
+        productoExistente.setDescripcion(descripcion);
+        productoExistente.setPrecio(precio);
+        productoExistente.setCantidadDisponible(cantidadDisponible);
+        productoExistente.setProveedorUsuario(proveedorUsuario);
+
+        System.out.println("Directorio de trabajo actual: " + System.getProperty("user.dir"));
+
+
+        // Procesa la imagen si viene
+        if (imagen != null && !imagen.isEmpty()) {
+            String folder = "backend/src/main/resources/static/img/";
+            File directorio = new File(folder);
+            if (!directorio.exists()) {
+                directorio.mkdirs();
+            }
+            String rutaFisica = folder + imagen.getOriginalFilename();
+            try {
+                imagen.transferTo(new File(rutaFisica));
+                String urlPublica = "http://localhost:8081/img/" + imagen.getOriginalFilename();
+                productoExistente.setImagenUrl(urlPublica);
+            } catch (IOException e) {
+                e.printStackTrace(); // Para ver el error en consola
+                return ResponseEntity.status(500).build();
+            }
+        }
+
+        listaProductos.actualizarProducto(productoExistente);
+
+        return ResponseEntity.ok(productoExistente);
+    }
+
+
 }
 

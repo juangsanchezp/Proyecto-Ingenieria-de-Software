@@ -1,182 +1,191 @@
-[
-  {
-    "id": 1,
-    "nombreProducto": "Camisa Oxford",
-    "categoria": "Camisas",
-    "descripcion": "Ideal para toda ocasión",
-    "imagenUrl": "http://localhost:8081/img/camisa_oxford.png",
-    "precio": 91.4,
-    "cantidadDisponible": 10
-  },
-  {
-    "id": 2,
-    "nombreProducto": "Pantalón Chino",
-    "categoria": "Pantalones",
-    "descripcion": "Perfecta para clima frío",
-    "imagenUrl": "http://localhost:8081/img/pantalon_chino.png",
-    "precio": 116.43,
-    "cantidadDisponible": 10
-  },
-  {
-    "id": 3,
-    "nombreProducto": "Chaqueta de Cuero",
-    "categoria": "Abrigos",
-    "descripcion": "Perfecta para clima frío",
-    "imagenUrl": "http://localhost:8081/img/chaqueta_de_cuero.png",
-    "precio": 40.25,
-    "cantidadDisponible": 10
-  },
-  {
-    "id": 4,
-    "nombreProducto": "Suéter de Lana",
-    "categoria": "Abrigos",
-    "descripcion": "Ideal para toda ocasión",
-    "imagenUrl": "http://localhost:8081/img/sweater_de_lana.png",
-    "precio": 30.41,
-    "cantidadDisponible": 10
-  },
-  {
-    "id": 5,
-    "nombreProducto": "Jeans Slim Fit",
-    "categoria": "Pantalones",
-    "descripcion": "Ideal para toda ocasión",
-    "imagenUrl": "http://localhost:8081/img/jeans_slim_fit.png",
-    "precio": 47.97,
-    "cantidadDisponible": 10
-  },
-  {
-    "id": 6,
-    "nombreProducto": "Camiseta Básica",
-    "categoria": "Camisas",
-    "descripcion": "Ideal para toda ocasión",
-    "imagenUrl": "http://localhost:8081/img/camiseta_basica.png",
-    "precio": 35.73,
-    "cantidadDisponible": 10
-  },
-  {
-    "id": 7,
-    "nombreProducto": "Blazer Casual",
-    "categoria": "Abrigos",
-    "descripcion": "Prenda cómoda y elegante",
-    "imagenUrl": "http://localhost:8081/img/blazer_casual.png",
-    "precio": 60.11,
-    "cantidadDisponible": 10
-  },
-  {
-    "id": 8,
-    "nombreProducto": "Camisa Cuadros",
-    "categoria": "Camisas",
-    "descripcion": "Perfecta para clima frío",
-    "imagenUrl": "http://localhost:8081/img/camisa_cuadros.png",
-    "precio": 82.16,
-    "cantidadDisponible": 10
-  },
-  {
-    "id": 9,
-    "nombreProducto": "Short Deportivo",
-    "categoria": "Pantalones",
-    "descripcion": "Diseño moderno y versátil",
-    "imagenUrl": "http://localhost:8081/img/short_deportivo.png",
-    "precio": 83.87,
-    "cantidadDisponible": 10
-  },
-  {
-    "id": 10,
-    "nombreProducto": "Campera Impermeable",
-    "categoria": "Abrigos",
-    "descripcion": "Perfecta para clima frío",
-    "imagenUrl": "http://localhost:8081/img/campera_impermeable.jpg",
-    "precio": 64.44,
-    "cantidadDisponible": 10
-  },
-  {
-    "id": 11,
-    "nombreProducto": "Polo Clásico",
-    "categoria": "Camisas",
-    "descripcion": "Diseño moderno y versátil",
-    "imagenUrl": "http://localhost:8081/img/polo_clasico.png",
-    "precio": 79.46,
-    "cantidadDisponible": 10
-  },
-  {
-    "id": 12,
-    "nombreProducto": "Jogger Urbano",
-    "categoria": "Pantalones",
-    "descripcion": "Perfecta para clima frío",
-    "imagenUrl": "http://localhost:8081/img/jogger_urbano.png",
-    "precio": 26.06,
-    "cantidadDisponible": 10
-  },
-  {
-    "id": 13,
-    "nombreProducto": "Parka de Invierno",
-    "categoria": "Abrigos",
-    "descripcion": "Prenda cómoda y elegante",
-    "imagenUrl": "http://localhost:8081/img/parka_de_invierno.png",
-    "precio": 93.06,
-    "cantidadDisponible": 10
-  },
-  {
-    "id": 14,
-    "nombreProducto": "Chaleco Acolchado",
-    "categoria": "Abrigos",
-    "descripcion": "Prenda cómoda y elegante",
-    "imagenUrl": "http://localhost:8081/img/chaleco_acolchado.png",
-    "precio": 113.78,
-    "cantidadDisponible": 10
-  },
-  {
-    "id": 15,
-    "nombreProducto": "Buzo con Capucha",
-    "categoria": "Abrigos",
-    "descripcion": "Estilo casual y urbano",
-    "imagenUrl": "http://localhost:8081/img/buzo_con_capucha.png",
-    "precio": 63.15,
-    "cantidadDisponible": 10
-  },
-  {
-    "id": 16,
-    "nombreProducto": "Traje Formal",
-    "categoria": "Trajes",
-    "descripcion": "Perfecta para clima frío",
-    "imagenUrl": "http://localhost:8081/img/traje_formal.png",
-    "precio": 43.29,
-    "cantidadDisponible": 10
-  },
-  {
-    "id": 17,
-    "nombreProducto": "Remera Estampada",
-    "categoria": "Camisas",
-    "descripcion": "Estilo casual y urbano",
-    "imagenUrl": "http://localhost:8081/img/remera_estampada.png",
-    "precio": 32.2,
-    "cantidadDisponible": 10
-  },
-  {
-    "id": 18,
-    "nombreProducto": "Sweater Cuello V",
-    "categoria": "Abrigos",
-    "descripcion": "Diseño moderno y versátil",
-    "imagenUrl": "http://localhost:8081/img/sweater_cuello_v.png",
-    "precio": 79.59,
-    "cantidadDisponible": 10
-  },
-  {
-    "id": 19,
-    "nombreProducto": "Camisa Manga Corta",
-    "categoria": "Camisas",
-    "descripcion": "Ideal para toda ocasión",
-    "imagenUrl": "http://localhost:8081/img/camisa_manga_corta.png",
-    "precio": 56.38,
-    "cantidadDisponible": 10
-  },
-  {
-    "id": 20,
-    "nombreProducto": "Cazadora Denim",
-    "categoria": "Abrigos",
-    "descripcion": "Diseño moderno y versátil",
-    "imagenUrl": "http://localhost:8081/img/cazadora_denim.png",
-    "precio": 89.97,
-    "cantidadDisponible": 10
-  }
+[ {
+  "id" : 1,
+  "nombreProducto" : "Camisa Oxford",
+  "categoria" : "Camisas",
+  "descripcion" : "Ideal para toda ocasión",
+  "imagenUrl" : "http://localhost:8081/img/camisa_oxford.png",
+  "precio" : 91.4,
+  "cantidadDisponible" : 10,
+  "proveedorUsuario" : "ana123"
+}, {
+  "id" : 2,
+  "nombreProducto" : "Pantalón Chinoooo",
+  "categoria" : "Pantalones",
+  "descripcion" : "Perfecta para clima frío",
+  "imagenUrl" : "http://localhost:8081/img/pantalon_chino.png",
+  "precio" : 116.43,
+  "cantidadDisponible" : 10,
+  "proveedorUsuario" : "marioG"
+}, {
+  "id" : 3,
+  "nombreProducto" : "Chaqueta de Cuero",
+  "categoria" : "Abrigos",
+  "descripcion" : "Perfecta para clima frío",
+  "imagenUrl" : "http://localhost:8081/img/chaqueta_de_cuero.png",
+  "precio" : 40.25,
+  "cantidadDisponible" : 10,
+  "proveedorUsuario" : "lroj"
+}, {
+  "id" : 4,
+  "nombreProducto" : "Suéter de Lana",
+  "categoria" : "Abrigos",
+  "descripcion" : "Ideal para toda ocasión",
+  "imagenUrl" : "http://localhost:8081/img/sweater_de_lana.png",
+  "precio" : 30.41,
+  "cantidadDisponible" : 10,
+  "proveedorUsuario" : "carlaF"
+}, {
+  "id" : 5,
+  "nombreProducto" : "Jeans Slim Fit",
+  "categoria" : "Pantalones",
+  "descripcion" : "Ideal para toda ocasión",
+  "imagenUrl" : "http://localhost:8081/img/jeans_slim_fit.png",
+  "precio" : 47.97,
+  "cantidadDisponible" : 10,
+  "proveedorUsuario" : "jmartinez"
+}, {
+  "id" : 6,
+  "nombreProducto" : "Camiseta Básica",
+  "categoria" : "Camisas",
+  "descripcion" : "Ideal para toda ocasión",
+  "imagenUrl" : "http://localhost:8081/img/camiseta_basica.png",
+  "precio" : 35.73,
+  "cantidadDisponible" : 10,
+  "proveedorUsuario" : "sofiaL"
+}, {
+  "id" : 7,
+  "nombreProducto" : "Blazer Casual",
+  "categoria" : "Abrigos",
+  "descripcion" : "Prenda cómoda y elegante",
+  "imagenUrl" : "http://localhost:8081/img/blazer_casual.png",
+  "precio" : 60.11,
+  "cantidadDisponible" : 10,
+  "proveedorUsuario" : "pedroR"
+}, {
+  "id" : 8,
+  "nombreProducto" : "Camisa Cuadros",
+  "categoria" : "Camisas",
+  "descripcion" : "Perfecta para clima frío",
+  "imagenUrl" : "http://localhost:8081/img/camisa_cuadros.png",
+  "precio" : 82.16,
+  "cantidadDisponible" : 10,
+  "proveedorUsuario" : "luciaA"
+}, {
+  "id" : 9,
+  "nombreProducto" : "Short Deportivo",
+  "categoria" : "Pantalones",
+  "descripcion" : "Diseño moderno y versátil",
+  "imagenUrl" : "http://localhost:8081/img/short_deportivo.png",
+  "precio" : 83.87,
+  "cantidadDisponible" : 10,
+  "proveedorUsuario" : "dsanchez"
+}, {
+  "id" : 10,
+  "nombreProducto" : "Campera Impermeable",
+  "categoria" : "Abrigos",
+  "descripcion" : "Perfecta para clima frío",
+  "imagenUrl" : "http://localhost:8081/img/campera_impermeable.jpg",
+  "precio" : 65.99,
+  "cantidadDisponible" : 10,
+  "proveedorUsuario" : "ax23"
+}, {
+  "id" : 11,
+  "nombreProducto" : "Polo Clásico",
+  "categoria" : "Camisas",
+  "descripcion" : "Diseño moderno y versátil",
+  "imagenUrl" : "http://localhost:8081/img/polo_clasico.png",
+  "precio" : 79.46,
+  "cantidadDisponible" : 10,
+  "proveedorUsuario" : "martinR"
+}, {
+  "id" : 12,
+  "nombreProducto" : "Jogger Urbano",
+  "categoria" : "Pantalones",
+  "descripcion" : "Perfecta para clima frío",
+  "imagenUrl" : "http://localhost:8081/img/jogger_urbano.png",
+  "precio" : 26.06,
+  "cantidadDisponible" : 10,
+  "proveedorUsuario" : "florM"
+}, {
+  "id" : 13,
+  "nombreProducto" : "Parka de Invierno",
+  "categoria" : "Abrigos",
+  "descripcion" : "Prenda cómoda y elegante",
+  "imagenUrl" : "http://localhost:8081/img/parka_de_invierno.png",
+  "precio" : 93.06,
+  "cantidadDisponible" : 10,
+  "proveedorUsuario" : "cdiaz"
+}, {
+  "id" : 14,
+  "nombreProducto" : "Chaleco Acolchado",
+  "categoria" : "Abrigos",
+  "descripcion" : "Prenda cómoda y elegante",
+  "imagenUrl" : "http://localhost:8081/img/chaleco_acolchado.png",
+  "precio" : 113.78,
+  "cantidadDisponible" : 10,
+  "proveedorUsuario" : "ax23"
+}, {
+  "id" : 15,
+  "nombreProducto" : "Buzo con Capucha",
+  "categoria" : "Abrigos",
+  "descripcion" : "Estilo casual y urbano",
+  "imagenUrl" : "http://localhost:8081/img/buzo_con_capucha.png",
+  "precio" : 63.15,
+  "cantidadDisponible" : 10,
+  "proveedorUsuario" : "javmol"
+}, {
+  "id" : 16,
+  "nombreProducto" : "Traje Formal",
+  "categoria" : "Trajes",
+  "descripcion" : "Perfecta para clima frío",
+  "imagenUrl" : "http://localhost:8081/img/traje_formal.png",
+  "precio" : 43.29,
+  "cantidadDisponible" : 10,
+  "proveedorUsuario" : "catab"
+}, {
+  "id" : 17,
+  "nombreProducto" : "Remera Estampada",
+  "categoria" : "Camisas",
+  "descripcion" : "Estilo casual y urbano",
+  "imagenUrl" : "http://localhost:8081/img/remera_estampada.png",
+  "precio" : 32.2,
+  "cantidadDisponible" : 10,
+  "proveedorUsuario" : "fercast"
+}, {
+  "id" : 18,
+  "nombreProducto" : "Sweater Cuello V",
+  "categoria" : "Abrigos",
+  "descripcion" : "Diseño moderno y versátil",
+  "imagenUrl" : "http://localhost:8081/img/sweater_cuello_v.png",
+  "precio" : 79.59,
+  "cantidadDisponible" : 10,
+  "proveedorUsuario" : "isaR"
+}, {
+  "id" : 19,
+  "nombreProducto" : "Camisa Manga Corta",
+  "categoria" : "Camisas",
+  "descripcion" : "Ideal para toda ocasión",
+  "imagenUrl" : "http://localhost:8081/img/camisa_manga_corta.png",
+  "precio" : 56.38,
+  "cantidadDisponible" : 10,
+  "proveedorUsuario" : "nicoI"
+}, {
+  "id" : 20,
+  "nombreProducto" : "Cazadora Denim",
+  "categoria" : "Abrigos",
+  "descripcion" : "Diseño moderno y versátil",
+  "imagenUrl" : "http://localhost:8081/img/cazadora_denim.png",
+  "precio" : 99.97,
+  "cantidadDisponible" : 10,
+  "proveedorUsuario" : "ax23"
+} ,{
+  "id" : 21,
+  "nombreProducto" : "Cazadora Denim2",
+  "categoria" : "Abrigos",
+  "descripcion" : "Diseño moderno y versátil",
+  "imagenUrl" : "http://localhost:8081/img/cazadora_denim.png",
+  "precio" : 99.97,
+  "cantidadDisponible" : 10,
+  "proveedorUsuario" : "ax23"
+}
 ]

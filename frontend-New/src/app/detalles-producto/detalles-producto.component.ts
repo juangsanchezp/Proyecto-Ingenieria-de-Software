@@ -4,10 +4,11 @@ import { ProductoService } from '../shared/services/producto.services';
 import { CurrencyPipe } from '@angular/common';
 import { ProductoCarrito } from '../shared/models/producto-carrito';
 import { CartService } from '../shared/services/carrito-productos.service';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-detalles-producto',
-  imports: [CurrencyPipe],
+  imports: [CurrencyPipe,RouterLink],
   templateUrl: './detalles-producto.component.html',
 
 })

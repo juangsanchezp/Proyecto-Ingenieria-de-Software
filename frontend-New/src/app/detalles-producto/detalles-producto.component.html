@@ -1,188 +1,67 @@
+<section class="py-8 bg-white md:py-8 dark:bg-gray-900 antialiased rounded-lg ">
 
-<section class="py-8 bg-white md:py-16 dark:bg-gray-900 antialiased rounded-lg ">
-    <div class="max-w-screen-xl px-4 mx-auto 2xl:px-0">
-      <div class="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
+  <div class="max-w-screen-xl px-4 mx-auto 2xl:px-0">
+    <div class="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
 
-        <div class="shrink-0 max-w-md lg:max-w-lg mx-auto bg-gray-800 rounded-lg">
-           <!--Intentar hacer que la imagen cuadre del mismo tamaño que el svg
-           <img class="w-full dark:hidden" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front.svg" alt="" />
-          <img class="w-full hidden dark:block" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front-dark.svg" alt="" />
-            -->
-          <img class="w-full hidden dark:block" [src]="producto?.imagenUrl" alt="" />
+      <div class="shrink-0 max-w-md lg:max-w-lg mx-auto bg-gray-800 rounded-lg">
+        <img class="w-full hidden dark:block" [src]="producto?.imagenUrl"   />
+      </div>
 
-        </div>
+      <div class="mt-6 sm:mt-8 lg:mt-0 relative"> <!-- Añadido 'relative' para el botón -->
 
-        <div class="mt-6 sm:mt-8 lg:mt-0">
-          <h1
-            class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white"
-          >
-            <!-- Mapeo y coloca los datos del producto en la vista-->
-            {{producto?.nombreProducto}}
-          </h1>
-          <div class="mt-4 sm:items-center sm:gap-4 sm:flex">
-            <p
-              class="text-2xl font-extrabold text-gray-900 sm:text-3xl dark:text-white"
-            >
-              {{producto?.precio | currency}}
-            </p>
+        <!-- Botón de cerrar -->
+        <button [routerLink]="['/home']" type="button" class="text-gray-400 absolute top-2.5 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white dark:text-white">
+          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+          <span class="sr-only">Cerrar</span>
+        </button>
 
+        <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">
+          {{producto?.nombreProducto}}
+        </h1>
+        <div class="mt-4 sm:items-center sm:gap-4 sm:flex">
+          <p class="text-2xl font-extrabold text-gray-900 sm:text-3xl dark:text-white">
+            {{producto?.precio | currency}}
+          </p>
 
-
-            <!--  -->
-            <div class="flex items-center gap-2 mt-2 sm:mt-0">
-              <div class="flex items-center gap-1">
-                <svg
-                  class="w-4 h-4 text-yellow-300"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
-                  />
-                </svg>
-                <svg
-                  class="w-4 h-4 text-yellow-300"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
-                  />
-                </svg>
-                <svg
-                  class="w-4 h-4 text-yellow-300"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
-                  />
-                </svg>
-                <svg
-                  class="w-4 h-4 text-yellow-300"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
-                  />
-                </svg>
-                <svg
-                  class="w-4 h-4 text-yellow-300"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
-                  />
-                </svg>
-              </div>
-
-              <p
-                class="text-sm font-medium leading-none text-gray-500 dark:text-gray-400"
-              >
-                (5.0)
-              </p>
-
-              <!-- Texto de estrellas-->
-              <a
-
-                class="text-sm font-medium leading-none text-gray-900 underline hover:no-underline dark:text-white"
-              >
-                345 Reviews
-              </a>
-
-
-
-
+          <div class="flex items-center gap-2 mt-2 sm:mt-0">
+            <div class="flex items-center gap-1">
+              <!-- Estrellas de calificación -->
+              <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+              </svg>
+              <!-- Repite el SVG para las estrellas restantes -->
             </div>
 
+            <p class="text-sm font-medium leading-none text-gray-500 dark:text-gray-400">(5.0)</p>
+            <a class="text-sm font-medium leading-none text-gray-900 underline hover:no-underline dark:text-white">345 Reviews</a>
           </div>
-
-          <p class="text-gray-100 mt-2 " >
-            Stock disponible: {{ stockDisponible() }}
-          </p>
-
-          <!-- Contenedor de Botones-->
-          <div class="mt-6 sm:gap-4 sm:items-center sm:flex sm:mt-8">
-
-
-
-           <!-- Boton de agreagar al carrito-->
-            <a
-              (click)="agregarAlCarrito()"
-              title=""
-              class="flex items-center justify-center py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 "
-              role="button"
-            >
-                <!--Icono de agregar carrito-->
-              <svg
-                class="w-5 h-5 -ms-2 me-2"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"
-                />
-              </svg>
-
-              Agregar al carrito
-            </a>
-          </div>
-
-
-
-          <!-- Mensaje de éxito -->
-          @if (mensaje() && mensaje().includes('✅')) {
-          <p class="text-green-600 text-sm mt-4 text-center">
-          {{ mensaje() }}
-          </p>
-          }
-
-          <!-- Mensaje de error -->
-          @if (mensaje() && mensaje().includes('❌')) {
-          <p class="text-red-600 text-sm mt-2 text-center">
-          {{ mensaje() }}
-          </p>
-          }
-
-          <hr class="my-6 md:my-8 border-gray-200 dark:border-gray-800" />
-
-          <p class="mb-6 text-gray-500 dark:text-gray-400">
-            <!-- Mapeo y coloca la descripcion del producto en la vista-->
-            {{producto?.descripcion}}
-          </p>
-
-
         </div>
+
+        <p class="text-gray-100 mt-2">Stock disponible: {{ stockDisponible() }}</p>
+
+        <div class="mt-6 sm:gap-4 sm:items-center sm:flex sm:mt-8">
+          <a (click)="agregarAlCarrito()" title="" class="flex items-center justify-center py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" role="button">
+            <svg class="w-5 h-5 -ms-2 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6" />
+            </svg>
+            Agregar al carrito
+          </a>
+        </div>
+
+        <!-- Mensajes de éxito y error -->
+        @if (mensaje() && mensaje().includes('✅')) {
+          <p class="text-green-600 text-sm mt-4 text-center">{{ mensaje() }}</p>
+        }
+
+        @if (mensaje() && mensaje().includes('❌')) {
+          <p class="text-red-600 text-sm mt-2 text-center">{{ mensaje() }}</p>
+        }
+
+        <hr class="my-6 md:my-8 border-gray-200 dark:border-gray-800" />
+        <p class="mb-6 text-gray-500 dark:text-gray-400">{{producto?.descripcion}}</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>

@@ -87,7 +87,7 @@
 
 
         @for (productoVender of productosVender; track $index) {
-        <app-producto-vender (updateCartEvent)="actualizarProductosVender()" [productoVender]="productoVender" />
+        <app-producto-vender (updateProductosEvent)="actualizarProductosVender()" [productoVender]="productoVender" />
 
         }
 

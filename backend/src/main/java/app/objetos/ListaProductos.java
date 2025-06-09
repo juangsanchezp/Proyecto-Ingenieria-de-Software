@@ -42,7 +42,15 @@ public class ListaProductos {
         ProductosJSON.guardar(productos,urlJson);
     }
 
-
+    public void actualizarProducto(Producto productoActualizado) {
+        for (int i = 0; i < productos.size(); i++) {
+            if (productos.get(i).getId() == productoActualizado.getId()) {
+                productos.set(i, productoActualizado);
+                ProductosJSON.guardar(productos,urlJson);
+                return;
+            }
+        }
+    }
 
 
 }

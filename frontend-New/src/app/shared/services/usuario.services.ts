@@ -38,5 +38,8 @@ export class UsuarioService {
     this.idUsuario="";
     this.autenticado=false;
   }
+  getIdUsuario(): string {
+    return this.idUsuario;
+  }
 
 }

@@ -23,11 +23,15 @@ export class ProductoService {
     }
 
     getProductoById(id: string): Observable<Producto> {
-        const url = `${this.baseUrl}/getProducto/${id}`;  
+        const url = `${this.baseUrl}/getProducto/${id}`;
         return this.http.get<Producto>(url);
     }
 
-    
+  actualizarProductoFormData(id: number, formData: FormData): Observable<any> {
+    const url = `${this.baseUrl}/actualizarProducto/${id}`;
+    return this.http.put(url, formData);
+  }
 
-  // Otros métodos para crear, actualizar y eliminar productos...
+
+
 }
