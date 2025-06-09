@@ -178,14 +178,13 @@
   "precio" : 99.97,
   "cantidadDisponible" : 10,
   "proveedorUsuario" : "ax23"
-} ,{
+}, {
   "id" : 21,
-  "nombreProducto" : "Cazadora Denim2",
+  "nombreProducto" : "Cazadora Denim222",
   "categoria" : "Abrigos",
   "descripcion" : "Diseño moderno y versátil",
-  "imagenUrl" : "http://localhost:8081/img/cazadora_denim.png",
+  "imagenUrl" : "http://localhost:8081/img/angulos-notables.png",
   "precio" : 99.97,
   "cantidadDisponible" : 10,
   "proveedorUsuario" : "ax23"
-}
-]
+} ]

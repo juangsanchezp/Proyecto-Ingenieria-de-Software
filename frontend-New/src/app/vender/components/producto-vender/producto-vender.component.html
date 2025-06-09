@@ -1,7 +1,7 @@
 <li class="bg-[#334155] rounded-md p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
   <div class="flex items-center gap-4 sm:flex-1">
 
-    <img alt="PlayStation 5 white gaming console with black base" class="w-14 h-14 rounded-md object-cover" height="60" [src]="productoVender().imagenUrl" width="60"/>
+    <img [alt]="productoVender().nombreProducto" class="w-14 h-14 rounded-md object-cover" height="60" [src]="productoVender().imagenUrl" width="60"/>
     <div>
       <p [routerLink]="['/productos', productoVender().id]" class="font-semibold text-sm leading-tight text-white hover:underline dark:text-white">
         {{productoVender().nombreProducto}}

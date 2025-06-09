@@ -88,7 +88,12 @@ public class ProductoController {
 
         // Procesa la imagen si viene
         if (imagen != null && !imagen.isEmpty()) {
-            String folder = "backend/src/main/resources/static/img/";
+
+
+
+
+
+            String folder = System.getProperty("user.dir") + "/backend/src/main/resources/static/img/";
             File directorio = new File(folder);
             if (!directorio.exists()) {
                 directorio.mkdirs();

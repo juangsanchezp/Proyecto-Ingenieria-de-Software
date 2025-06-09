@@ -29,10 +29,16 @@ export class VenderComponent implements OnInit {
 
 
   actualizarProductosVender(): void {
-
     this.productoService.getProductos().subscribe(productos => {
-      const proveedorActual = this.usuarioService.getIdUsuario(); // El usuario autenticado
+      const proveedorActual = this.usuarioService.getIdUsuario();
       this.productosVender = productos.filter(producto => producto.proveedorUsuario === proveedorActual);
+
+      // Aplica cache busting a cada imagen
+      this.productosVender.forEach(producto => {
+        if (producto.imagenUrl) {
+          producto.imagenUrl = producto.imagenUrl + '?' + new Date().getTime();
+        }
+      });
     });
   }
 

@@ -114,6 +114,8 @@ export class ProductoVenderComponent implements OnInit ,AfterViewInit {
     this.productoService.actualizarProductoFormData(this.productoEditado.id, formData).subscribe({
       next: (response) => {
         this.mostrarAlerta('success', '¡El producto fue actualizado correctamente!');
+
+        // Actualiza el producto en el componente padre
         this.updateProductosEvent.emit();
       },
       error: (error) => {
