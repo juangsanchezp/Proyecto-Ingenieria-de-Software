@@ -1,8 +1,13 @@
 package app.objetos;
 
 import app.archivosjson.ProductosJSON;
+
+import java.io.File;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
+
+import org.springframework.web.multipart.MultipartFile;
 
 public class ListaProductos {
     private LinkedList<Producto> productos;
@@ -49,6 +54,42 @@ public class ListaProductos {
                 ProductosJSON.guardar(productos,urlJson);
                 return;
             }
+        }
+    }
+    //Generar un nuevo ID para un producto
+    public int generarNuevoId() {
+        int maxId = 0;
+        for (Producto producto : productos) {
+            if (producto.getId() > maxId) {
+                maxId = producto.getId();
+            }
+        }
+        return maxId + 1;
+    }
+
+
+    /**
+     * Procesa la imagen recibida (guarda en disco y retorna la URL pública)
+     * @param imagen MultipartFile recibido del controlador
+     * @return URL pública de la imagen, o null si no se pudo guardar
+     */
+    public String procesarImagen(MultipartFile imagen) {
+        if (imagen == null || imagen.isEmpty()) {
+            return null;
+        }
+
+        String folder = System.getProperty("user.dir") + "/backend/src/main/resources/static/img/";
+        File directorio = new File(folder);
+        if (!directorio.exists()) {
+            directorio.mkdirs();
+        }
+        String rutaFisica = folder + imagen.getOriginalFilename();
+        try {
+            imagen.transferTo(new File(rutaFisica));
+            return "http://localhost:8081/img/" + imagen.getOriginalFilename();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
         }
     }
 

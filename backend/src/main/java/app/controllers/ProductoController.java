@@ -7,8 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Optional;
 
@@ -36,13 +34,36 @@ public class ProductoController {
         }
     }
 
-    // Agregar un nuevo producto
-    @PostMapping("/crearProducto")
-    public ResponseEntity<Producto> crearProducto(@RequestBody Producto producto) {
+    // Agregar un nuevo producto con imagen
+    @PostMapping(value = "/crearProducto", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<Producto> crearProducto(
+            @RequestParam("nombreProducto") String nombreProducto,
+            @RequestParam("categoria") String categoria,
+            @RequestParam("descripcion") String descripcion,
+            @RequestParam("precio") float precio,
+            @RequestParam("cantidadDisponible") Integer cantidadDisponible,
+            @RequestParam("proveedorUsuario") String proveedorUsuario,
+            @RequestPart(value = "imagen") MultipartFile imagen
+    ) {
+        Producto producto = new Producto();
+        producto.setId(listaProductos.generarNuevoId());//Se genera un nuevo ID para el producto
+        producto.setNombreProducto(nombreProducto);
+        producto.setCategoria(categoria);
+        producto.setDescripcion(descripcion);
+        producto.setPrecio(precio);
+        producto.setCantidadDisponible(cantidadDisponible);
+        producto.setProveedorUsuario(proveedorUsuario);
+
+
+        // Procesa la imagen usando el método de ListaProductos
+        String urlImagen = listaProductos.procesarImagen(imagen);
+        producto.setImagenUrl(urlImagen);
+
         listaProductos.agregarProducto(producto);
         Producto nuevoProducto = listaProductos.buscarProducto(producto.getId());
         return ResponseEntity.ok(nuevoProducto);
     }
+
 
     // Eliminar un producto por su ID
     @DeleteMapping("/eliminarProducto/{id}")
@@ -55,7 +76,7 @@ public class ProductoController {
         return ResponseEntity.ok().build();
     }
 
-    // Actualizar un producto por su ID
+    // Actualizar un producto por su ID con imagen
     @PutMapping(value = "/actualizarProducto/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<Producto> actualizarProducto(
             @PathVariable int id,
@@ -73,8 +94,6 @@ public class ProductoController {
             return ResponseEntity.notFound().build();
         }
 
-
-
         // Actualiza los campos
         productoExistente.setNombreProducto(nombreProducto);
         productoExistente.setCategoria(categoria);
@@ -83,30 +102,10 @@ public class ProductoController {
         productoExistente.setCantidadDisponible(cantidadDisponible);
         productoExistente.setProveedorUsuario(proveedorUsuario);
 
-        System.out.println("Directorio de trabajo actual: " + System.getProperty("user.dir"));
-
-
-        // Procesa la imagen si viene
+        // Procesa la imagen usando el método de ListaProductos (solo si se envía una nueva)
         if (imagen != null && !imagen.isEmpty()) {
-
-
-
-
-
-            String folder = System.getProperty("user.dir") + "/backend/src/main/resources/static/img/";
-            File directorio = new File(folder);
-            if (!directorio.exists()) {
-                directorio.mkdirs();
-            }
-            String rutaFisica = folder + imagen.getOriginalFilename();
-            try {
-                imagen.transferTo(new File(rutaFisica));
-                String urlPublica = "http://localhost:8081/img/" + imagen.getOriginalFilename();
-                productoExistente.setImagenUrl(urlPublica);
-            } catch (IOException e) {
-                e.printStackTrace(); // Para ver el error en consola
-                return ResponseEntity.status(500).build();
-            }
+            String urlImagen = listaProductos.procesarImagen(imagen);
+            productoExistente.setImagenUrl(urlImagen);
         }
 
         listaProductos.actualizarProducto(productoExistente);
@@ -114,6 +113,4 @@ public class ProductoController {
         return ResponseEntity.ok(productoExistente);
     }
 
-
 }
-

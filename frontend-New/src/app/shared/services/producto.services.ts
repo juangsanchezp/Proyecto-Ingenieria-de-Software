@@ -11,11 +11,10 @@ export class ProductoService {
   private baseUrl = 'http://localhost:8081/apiProductos'; // Cambia esto a la URL de tu API
   constructor(private http: HttpClient) {}
 
-  getProducto(): Observable<Producto> {
-    const url = `${this.baseUrl}/getUsuario`;
-    return this.http.get<Producto>(url)
-    //return this.http.getUsuario(this.apiUrl);
-  }
+    crearProducto(formData: FormData): Observable<Producto> {
+        const url = `${this.baseUrl}/crearProducto`;
+        return this.http.post<Producto>(url, formData);
+    }
 
     getProductos(): Observable<Producto[]> {
         const url = `${this.baseUrl}/getProductos`;

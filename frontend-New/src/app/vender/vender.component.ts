@@ -1,4 +1,3 @@
-
 import {ProductoCarrito} from '../shared/models/producto-carrito';
 import {ProductoVenderComponent} from './components/producto-vender/producto-vender.component';
 
@@ -6,27 +5,107 @@ import {Component, OnInit} from '@angular/core';
 import {ProductoService} from '../shared/services/producto.services';
 import {UsuarioService} from '../shared/services/usuario.services';
 import {Producto} from '../shared/models/producto.model';
-
+import {FormsModule} from '@angular/forms';
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-vender',
-  imports: [ProductoVenderComponent],
+  imports: [ProductoVenderComponent, FormsModule, CommonModule],
   templateUrl: './vender.component.html',
-
 })
 export class VenderComponent implements OnInit {
 
-  productosVender:Producto[]= [];
-  constructor(private productoService: ProductoService ,
-              private usuarioService: UsuarioService) {}
+  productosVender: Producto[] = [];
+  constructor(
+    private productoService: ProductoService,
+    private usuarioService: UsuarioService
+  ) {}
 
+  // Variables para el alert
+  alertType: 'success' | 'error' = 'success';
+  alertMessage = '';
+  showAlert = false;
+
+  // Variables para el input file y producto nuevo
+  imagePreviews: string[] = [];
+  selectedFiles: File[] = [];
+  productoEditado: any = {};
+
+  nuevoProducto: any = {
+    nombreProducto: '',
+    categoria: '',
+    descripcion: '',
+    precio: '',
+    cantidadDisponible: '',
+    proveedorUsuario: '',
+    imagen: null,
+  };
+
+  onFileSelected(event: Event, fileInput: HTMLInputElement) {
+    if (fileInput.files && fileInput.files.length > 0) {
+      this.selectedFiles = [];
+      this.imagePreviews = [];
+
+      const file = fileInput.files[0];
+      this.selectedFiles.push(file);
+
+      // Previsualización de la imagen
+      const objectUrl = URL.createObjectURL(file);
+      this.imagePreviews.push(objectUrl);
+
+      this.nuevoProducto.imagen = null;
+    }
+  }
+
+  removeImage(index: number) {
+    this.imagePreviews.splice(index, 1);
+    this.selectedFiles.splice(index, 1);
+    this.nuevoProducto.imagen = null;
+  }
+
+  agregarProducto() {
+    const formData = new FormData();
+    formData.append('nombreProducto', this.nuevoProducto.nombreProducto);
+    formData.append('precio', this.nuevoProducto.precio);
+    formData.append('categoria', this.nuevoProducto.categoria);
+    formData.append('descripcion', this.nuevoProducto.descripcion);
+    formData.append('cantidadDisponible', this.nuevoProducto.cantidadDisponible);
+    formData.append('proveedorUsuario', this.usuarioService.getIdUsuario());
+
+    // Imagen (solo la primera si es una sola)
+    if (this.selectedFiles.length > 0) {
+      formData.append('imagen', this.selectedFiles[0]);
+    }
+
+    this.productoService.crearProducto(formData).subscribe({
+      next: (res) => {
+        this.mostrarAlerta('success', '¡El producto fue creado correctamente!');
+
+        // Limpia el formulario y previews
+        this.nuevoProducto = {
+          nombreProducto: '',
+          categoria: '',
+          descripcion: '',
+          precio: '',
+          cantidadDisponible: '',
+          proveedorUsuario: '',
+          imagen: null,
+        };
+        this.selectedFiles = [];
+        this.imagePreviews = [];
+
+        this.actualizarProductosVender();
+      },
+      error: (err) => {
+        this.mostrarAlerta('error', 'Ocurrió un problema al crear el producto. Intenta de nuevo.');
+      }
+    });
+  }
 
   ngOnInit(): void {
     initFlowbite();
-    this.actualizarProductosVender()
+    this.actualizarProductosVender();
   }
-
-
 
   actualizarProductosVender(): void {
     this.productoService.getProductos().subscribe(productos => {
@@ -42,5 +121,12 @@ export class VenderComponent implements OnInit {
     });
   }
 
-
+  mostrarAlerta(type: 'success' | 'error', message: string) {
+    this.alertType = type;
+    this.alertMessage = message;
+    this.showAlert = true;
+    setTimeout(() => {
+      this.showAlert = false;
+    }, 3000);
+  }
 }

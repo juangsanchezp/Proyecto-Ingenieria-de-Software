@@ -38,6 +38,7 @@
             <a class="text-sm font-medium leading-none text-gray-900 underline hover:no-underline dark:text-white">345 Reviews</a>
           </div>
         </div>
+        <p class="text-gray-100 mt-2">Vendedor: {{ producto?.proveedorUsuario }}</p>
 
         <p class="text-gray-100 mt-2">Stock disponible: {{ stockDisponible() }}</p>
 
@@ -60,7 +61,7 @@
         }
 
         <hr class="my-6 md:my-8 border-gray-200 dark:border-gray-800" />
-        <p class="mb-6 text-gray-500 dark:text-gray-400">{{producto?.descripcion}}</p>
+        <p class="mb-6 text-gray-500 dark:text-gray-400 break-words">{{producto?.descripcion}}</p>
       </div>
     </div>
   </div>
