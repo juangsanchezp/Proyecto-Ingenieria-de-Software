@@ -180,20 +180,11 @@
   "proveedorUsuario" : "ax23"
 }, {
   "id" : 21,
-  "nombreProducto" : "Cazadora Denim222",
-  "categoria" : "Abrigos",
-  "descripcion" : "Diseño moderno y versátil incsjdffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffslajfjsafjsafasjfsajdfjsajfsadfjaskjfdsajfdjsafjsjdfakjasfdlasfdjasdfkjshalkjfhasdjfhlkasjdfkljshdfhehfuedseugdiuhgiusdfhgiudhgushdughdsiuhgidushghuadsgiusahdiughasuihdgiuasgduhasiuhdgiuashdgiusahdgiuasidguasiuhgiushaiughasidughusghiausghiuashdgiuhasdiughasiughdiausghdiushadgiuhasdiughasiuhgiudsahgiushag",
+  "nombreProducto" : "adsdfd",
+  "categoria" : "Pantalones",
+  "descripcion" : "si",
   "imagenUrl" : "http://localhost:8081/img/angulos-notables.png",
-  "precio" : 299.0,
-  "cantidadDisponible" : 10,
-  "proveedorUsuario" : "ax23"
-}, {
-  "id" : 22,
-  "nombreProducto" : "a",
-  "categoria" : "Camisas",
-  "descripcion" : "a",
-  "imagenUrl" : "http://localhost:8081/img/angulos-notables.png",
-  "precio" : 1.0,
-  "cantidadDisponible" : 11,
+  "precio" : 324.0,
+  "cantidadDisponible" : 233,
   "proveedorUsuario" : "ax23"
 } ]

@@ -31,6 +31,11 @@ export class ProductoService {
     return this.http.put(url, formData);
   }
 
+  eliminarProducto(id: number): Observable<any> {
+    const url = `${this.baseUrl}/eliminarProducto/${id}`;
+    return this.http.delete(url);
+  }
+
 
 
 }

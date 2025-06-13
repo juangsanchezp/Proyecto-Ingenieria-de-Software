@@ -38,8 +38,9 @@ export class VenderComponent implements OnInit {
     precio: '',
     cantidadDisponible: '',
     proveedorUsuario: '',
-    imagen: null,
+    imagenUrl: "",
   };
+  imagen= null;
 
   onFileSelected(event: Event, fileInput: HTMLInputElement) {
     if (fileInput.files && fileInput.files.length > 0) {
@@ -53,17 +54,21 @@ export class VenderComponent implements OnInit {
       const objectUrl = URL.createObjectURL(file);
       this.imagePreviews.push(objectUrl);
 
-      this.nuevoProducto.imagen = null;
+      this.imagen = null;
     }
   }
 
   removeImage(index: number) {
     this.imagePreviews.splice(index, 1);
     this.selectedFiles.splice(index, 1);
-    this.nuevoProducto.imagen = null;
+    this.imagen = null;
   }
 
   agregarProducto() {
+
+    //añadir el nombre del usuario al nuevo producto
+    this.nuevoProducto.proveedorUsuario = this.usuarioService.getIdUsuario();
+
     const formData = new FormData();
     formData.append('producto', JSON.stringify(this.nuevoProducto));  // Convertir el objeto a JSON
     if (this.selectedFiles.length > 0) {
@@ -80,7 +85,7 @@ export class VenderComponent implements OnInit {
           precio: '',
           cantidadDisponible: '',
           proveedorUsuario: '',
-          imagen: null,
+          imagenUrl: "",
         };
         this.selectedFiles = [];
         this.imagePreviews = [];

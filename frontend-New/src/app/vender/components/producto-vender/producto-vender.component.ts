@@ -142,25 +142,20 @@ export class ProductoVenderComponent implements OnInit ,AfterViewInit {
     this.selectedFiles = [];
   }
 
-  /*
   eliminarProducto() {
     this.productoService.eliminarProducto(this.productoVender().id).subscribe({
       next: (response) => {
-        this.showSuccess = true;
-        this.updateProductosEvent.emit(); // Emitir el evento para actualizar el producto en el componente padre
-        setTimeout(() => {
-          this.showSuccess = false;
-        }, 3000); // Oculta el toast tras 3 segundos
+        this.mostrarAlerta('success', '¡El producto fue actualizado correctamente!');
+        // Actualiza el producto en el componente padre
+        this.updateProductosEvent.emit();
+
       },
       error: (error) => {
-        console.error('Error al eliminar el producto:', error);
-        this.showError = true;
-        setTimeout(() => {
-          this.showError = false;
-        }, 3000); // Oculta el toast tras 3 segundos
+        this.mostrarAlerta('error', 'Ocurrió un problema al eliminar el producto. Intenta de nuevo.');
       }
     });
   }
-  */
+
+
 
 }
