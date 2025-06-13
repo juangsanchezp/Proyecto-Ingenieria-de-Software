@@ -2,11 +2,13 @@ package app.controllers;
 
 import app.objetos.ListaProductos;
 import app.objetos.Producto;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Optional;
 
@@ -15,7 +17,7 @@ import java.util.Optional;
 @RequestMapping("/apiProductos")
 public class ProductoController {
 
-    ListaProductos listaProductos = new ListaProductos("backend/src/main/java/app/archivosjson/productos.json");
+    private ListaProductos listaProductos = new ListaProductos("backend/src/main/java/app/archivosjson/productos.json");
 
     // Obtener todos los productos
     @GetMapping("/getProductos")
@@ -35,25 +37,15 @@ public class ProductoController {
     }
 
     // Agregar un nuevo producto con imagen
+
     @PostMapping(value = "/crearProducto", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<Producto> crearProducto(
-            @RequestParam("nombreProducto") String nombreProducto,
-            @RequestParam("categoria") String categoria,
-            @RequestParam("descripcion") String descripcion,
-            @RequestParam("precio") float precio,
-            @RequestParam("cantidadDisponible") Integer cantidadDisponible,
-            @RequestParam("proveedorUsuario") String proveedorUsuario,
-            @RequestPart(value = "imagen") MultipartFile imagen
-    ) {
-        Producto producto = new Producto();
-        producto.setId(listaProductos.generarNuevoId());//Se genera un nuevo ID para el producto
-        producto.setNombreProducto(nombreProducto);
-        producto.setCategoria(categoria);
-        producto.setDescripcion(descripcion);
-        producto.setPrecio(precio);
-        producto.setCantidadDisponible(cantidadDisponible);
-        producto.setProveedorUsuario(proveedorUsuario);
-
+            @RequestPart("producto") String productoJson,
+            @RequestPart(value = "imagen", required = false) MultipartFile imagen
+    ) throws IOException {
+        // Deserializa el JSON a un objeto Producto
+        ObjectMapper mapper = new ObjectMapper();
+        Producto producto = mapper.readValue(productoJson, Producto.class);
 
         // Procesa la imagen usando el método de ListaProductos
         String urlImagen = listaProductos.procesarImagen(imagen);
@@ -63,6 +55,9 @@ public class ProductoController {
         Producto nuevoProducto = listaProductos.buscarProducto(producto.getId());
         return ResponseEntity.ok(nuevoProducto);
     }
+
+
+
 
 
     // Eliminar un producto por su ID
@@ -84,7 +79,7 @@ public class ProductoController {
             @RequestParam("categoria") String categoria,
             @RequestParam("descripcion") String descripcion,
             @RequestParam("precio") float precio,
-            @RequestParam("cantidadDisponible") Integer cantidadDisponible,
+            @RequestParam("cantidadDisponible") int cantidadDisponible,
             @RequestParam("proveedorUsuario") String proveedorUsuario,
             @RequestPart(value = "imagen", required = false) MultipartFile imagen
     ) {

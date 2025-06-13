@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { ProductoCarritoComponent } from "./components/producto-carrito/producto-carrito.component";
+import { ProductoCarritoComponent } from "./producto-carrito/producto-carrito.component";
 import { ProductoCarrito } from '../shared/models/producto-carrito';
 import { CurrencyPipe } from '@angular/common';
 import { CartService } from '../shared/services/carrito-productos.service';
@@ -18,7 +18,7 @@ export class CarritoComponent implements OnInit {
   ngOnInit(): void {
     initFlowbite();
     this.actualizarCarrito();
-    
+
 
 
   }
@@ -29,6 +29,6 @@ export class CarritoComponent implements OnInit {
     //Calculando le total
     this.total = this.carritoProductos.reduce((acc, val) =>acc + val.producto.precio * val.cantidad,0); {
     }}
-    
-  
+
+
 }

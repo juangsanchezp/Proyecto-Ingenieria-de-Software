@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import{ Producto } from '../shared/models/producto.model';
 import { HttpClient } from '@angular/common/http';
 import { ProductoService } from '../shared/services/producto.services';
-import { HomeProductComponent } from "./components/home-product/home-product.component";
+import { HomeProductComponent } from "./home-product/home-product.component";
 import { timeout } from 'rxjs';
 import { FormsModule } from '@angular/forms'
 

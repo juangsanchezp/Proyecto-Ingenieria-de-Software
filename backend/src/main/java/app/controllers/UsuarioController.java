@@ -1,26 +1,19 @@
 package app.controllers;
 
-import app.archivosjson.UsuariosJSON;
 import app.objetos.ListaUsuarios;
 import app.objetos.Usuario;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
-
 @RestController
 @RequestMapping("/apiUsuarios")
 @CrossOrigin(origins = "http://localhost:4200")
 public class UsuarioController {
 
-    ListaUsuarios listaUsuarios = new ListaUsuarios(); // Instancia compartida
+    private ListaUsuarios listaUsuarios = new ListaUsuarios(); // Instancia compartida
 
-    @GetMapping("/getUsuario")
-    public ResponseEntity<Usuario> getUsuario(){
-        Usuario usu = new Usuario("Jose");
-        return ResponseEntity.ok(usu);
-    }
+
 
     @PostMapping("/agregarUsuario")
     public ResponseEntity<Usuario> agregarUsuario(@RequestBody Usuario usuario) {

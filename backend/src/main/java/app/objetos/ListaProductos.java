@@ -1,7 +1,5 @@
 package app.objetos;
 
-import app.archivosjson.ProductosJSON;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.LinkedList;
@@ -38,6 +36,7 @@ public class ListaProductos {
     }
 
     public void agregarProducto(Producto producto) {
+        producto.setId(generarNuevoId()); // Asignar un nuevo ID al producto
         productos.add(producto);
         ProductosJSON.guardar(productos,urlJson);
     }
@@ -57,7 +56,7 @@ public class ListaProductos {
         }
     }
     //Generar un nuevo ID para un producto
-    public int generarNuevoId() {
+    private int generarNuevoId() {
         int maxId = 0;
         for (Producto producto : productos) {
             if (producto.getId() > maxId) {

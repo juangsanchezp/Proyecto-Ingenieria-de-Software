@@ -65,14 +65,7 @@ export class VenderComponent implements OnInit {
 
   agregarProducto() {
     const formData = new FormData();
-    formData.append('nombreProducto', this.nuevoProducto.nombreProducto);
-    formData.append('precio', this.nuevoProducto.precio);
-    formData.append('categoria', this.nuevoProducto.categoria);
-    formData.append('descripcion', this.nuevoProducto.descripcion);
-    formData.append('cantidadDisponible', this.nuevoProducto.cantidadDisponible);
-    formData.append('proveedorUsuario', this.usuarioService.getIdUsuario());
-
-    // Imagen (solo la primera si es una sola)
+    formData.append('producto', JSON.stringify(this.nuevoProducto));  // Convertir el objeto a JSON
     if (this.selectedFiles.length > 0) {
       formData.append('imagen', this.selectedFiles[0]);
     }
@@ -80,8 +73,6 @@ export class VenderComponent implements OnInit {
     this.productoService.crearProducto(formData).subscribe({
       next: (res) => {
         this.mostrarAlerta('success', '¡El producto fue creado correctamente!');
-
-        // Limpia el formulario y previews
         this.nuevoProducto = {
           nombreProducto: '',
           categoria: '',
@@ -93,7 +84,6 @@ export class VenderComponent implements OnInit {
         };
         this.selectedFiles = [];
         this.imagePreviews = [];
-
         this.actualizarProductosVender();
       },
       error: (err) => {

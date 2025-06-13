@@ -1,7 +1,5 @@
 package app.objetos;
 
-import app.archivosjson.UsuariosJSON;
-
 import java.util.LinkedList;
 import java.util.List;
 

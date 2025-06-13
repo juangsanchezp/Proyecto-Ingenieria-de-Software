@@ -1,7 +1,7 @@
 import { Component, input, signal } from '@angular/core';
-import { Producto } from '../../../shared/models/producto.model';
+import { Producto } from '../../shared/models/producto.model';
 import { RouterLink } from '@angular/router';
-import { CartService } from '../../../shared/services/carrito-productos.service';
+import { CartService } from '../../shared/services/carrito-productos.service';
 
 @Component({
   selector: 'app-home-product',
