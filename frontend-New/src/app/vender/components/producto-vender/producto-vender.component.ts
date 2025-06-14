@@ -25,7 +25,7 @@ export class ProductoVenderComponent implements OnInit ,AfterViewInit {
 
   imagePreviews: string[] = [];
   selectedFiles: File[] = [];
-
+  imagen = null;
 
   //Evento para actualizar el producto
   updateProductosEvent = output<void>();
@@ -73,7 +73,7 @@ export class ProductoVenderComponent implements OnInit ,AfterViewInit {
       this.imagePreviews.push(objectUrl);
 
       // Limpia la referencia base64 previa
-      this.productoEditado.imagen = null;
+      this.imagen = null;
     }
   }
 
@@ -82,7 +82,7 @@ export class ProductoVenderComponent implements OnInit ,AfterViewInit {
   removeImage(index: number) {
     this.imagePreviews.splice(index, 1);
     this.selectedFiles.splice(index, 1);
-    this.productoEditado.imagen = null;
+    this.imagen = null;
   }
 
 
@@ -90,20 +90,14 @@ export class ProductoVenderComponent implements OnInit ,AfterViewInit {
 
   actualizarProducto() {
     // Valida que exista una imagen (en archivo)
-    const tieneImagen = !!this.productoEditado.imagen || this.imagePreviews.length > 0;
+    const tieneImagen = !!this.imagen || this.imagePreviews.length > 0;
     if (!tieneImagen) {
       this.mostrarAlerta('error', 'Debes subir una imagen para actualizar el producto.');
       return;
     }
-    // Agrega los datos del producto al FormData
     const formData = new FormData();
-    formData.append('id', this.productoEditado.id);
-    formData.append('nombreProducto', this.productoEditado.nombreProducto);
-    formData.append('categoria', this.productoEditado.categoria);
-    formData.append('descripcion', this.productoEditado.descripcion);
-    formData.append('precio', this.productoEditado.precio);
-    formData.append('cantidadDisponible', this.productoEditado.cantidadDisponible);
-    formData.append('proveedorUsuario', this.productoEditado.proveedorUsuario);
+    formData.append('producto', JSON.stringify(this.productoEditado));  // Convertir el objeto a JSON
+
 
     // Solo agrega la imagen si se seleccionó un archivo
     if (this.selectedFiles.length > 0) {

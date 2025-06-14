@@ -2,6 +2,7 @@ package app.controllers;
 
 import app.objetos.ListaProductos;
 import app.objetos.Producto;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -74,38 +75,25 @@ public class ProductoController {
     // Actualizar un producto por su ID con imagen
     @PutMapping(value = "/actualizarProducto/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<Producto> actualizarProducto(
-            @PathVariable int id,
-            @RequestParam("nombreProducto") String nombreProducto,
-            @RequestParam("categoria") String categoria,
-            @RequestParam("descripcion") String descripcion,
-            @RequestParam("precio") float precio,
-            @RequestParam("cantidadDisponible") int cantidadDisponible,
-            @RequestParam("proveedorUsuario") String proveedorUsuario,
+            @RequestPart("producto") String productoJson,
             @RequestPart(value = "imagen", required = false) MultipartFile imagen
-    ) {
-        Producto productoExistente = listaProductos.buscarProducto(id);
+    ) throws JsonProcessingException {
 
-        if (productoExistente == null) {
-            return ResponseEntity.notFound().build();
-        }
 
-        // Actualiza los campos
-        productoExistente.setNombreProducto(nombreProducto);
-        productoExistente.setCategoria(categoria);
-        productoExistente.setDescripcion(descripcion);
-        productoExistente.setPrecio(precio);
-        productoExistente.setCantidadDisponible(cantidadDisponible);
-        productoExistente.setProveedorUsuario(proveedorUsuario);
+        // Deserializa el JSON a un objeto Producto
+        ObjectMapper mapper = new ObjectMapper();
+        Producto productoEditado = mapper.readValue(productoJson, Producto.class);
+
 
         // Procesa la imagen usando el método de ListaProductos (solo si se envía una nueva)
         if (imagen != null && !imagen.isEmpty()) {
             String urlImagen = listaProductos.procesarImagen(imagen);
-            productoExistente.setImagenUrl(urlImagen);
+            productoEditado.setImagenUrl(urlImagen);
         }
 
-        listaProductos.actualizarProducto(productoExistente);
+        listaProductos.actualizarProducto(productoEditado);
 
-        return ResponseEntity.ok(productoExistente);
+        return ResponseEntity.ok(productoEditado);
     }
 
 

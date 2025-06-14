@@ -180,11 +180,11 @@
   "proveedorUsuario" : "ax23"
 }, {
   "id" : 21,
-  "nombreProducto" : "adsdfd",
-  "categoria" : "Pantalones",
+  "nombreProducto" : "Nuevo nombre1",
+  "categoria" : "Trajes",
   "descripcion" : "si",
-  "imagenUrl" : "http://localhost:8081/img/angulos-notables.png",
-  "precio" : 324.0,
+  "imagenUrl" : "http://localhost:8081/img/programa para probar sd.png?1749864463683",
+  "precio" : 500.0,
   "cantidadDisponible" : 233,
   "proveedorUsuario" : "ax23"
 } ]
