@@ -9,7 +9,7 @@
   "proveedorUsuario" : "ana123"
 }, {
   "id" : 2,
-  "nombreProducto" : "Pantalón Chinoooo",
+  "nombreProducto" : "Pantalón Chino",
   "categoria" : "Pantalones",
   "descripcion" : "Perfecta para clima frío",
   "imagenUrl" : "http://localhost:8081/img/pantalon_chino.png",
