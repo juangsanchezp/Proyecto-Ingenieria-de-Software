@@ -3,181 +3,161 @@
   "nombreUsuario" : "ana123",
   "nombre" : "Ana",
   "apellido" : "Pérez",
-  "contrasena" : "anaPass123",
-  "carritoProductos" : null
+  "contrasena" : "anaPass123"
 }, {
   "correo" : "mario.gomez@example.com",
   "nombreUsuario" : "marioG",
   "nombre" : "Mario",
   "apellido" : "Gómez",
-  "contrasena" : "mario2024",
-  "carritoProductos" : null
+  "contrasena" : "mario2024"
 }, {
   "correo" : "luis.rojas@example.com",
   "nombreUsuario" : "lroj",
   "nombre" : "Luis",
   "apellido" : "Rojas",
-  "contrasena" : "lrojas!23",
-  "carritoProductos" : null
+  "contrasena" : "lrojas!23"
 }, {
   "correo" : "carla.fernandez@example.com",
   "nombreUsuario" : "carlaF",
   "nombre" : "Carla",
   "apellido" : "Fernández",
-  "contrasena" : "cfpass",
-  "carritoProductos" : null
+  "contrasena" : "cfpass"
 }, {
   "correo" : "juan.martinez@example.com",
   "nombreUsuario" : "jmartinez",
   "nombre" : "Juan",
   "apellido" : "Martínez",
-  "contrasena" : "juanMpass",
-  "carritoProductos" : null
+  "contrasena" : "juanMpass"
 }, {
   "correo" : "sofia.lopez@example.com",
   "nombreUsuario" : "sofiaL",
   "nombre" : "Sofía",
   "apellido" : "López",
-  "contrasena" : "sofia2024",
-  "carritoProductos" : null
+  "contrasena" : "sofia2024"
 }, {
   "correo" : "pedro.ramirez@example.com",
   "nombreUsuario" : "pedroR",
   "nombre" : "Pedro",
   "apellido" : "Ramírez",
-  "contrasena" : "pedro*321",
-  "carritoProductos" : null
+  "contrasena" : "pedro*321"
 }, {
   "correo" : "lucia.alvarez@example.com",
   "nombreUsuario" : "luciaA",
   "nombre" : "Lucía",
   "apellido" : "Álvarez",
-  "contrasena" : "lucy@456",
-  "carritoProductos" : null
+  "contrasena" : "lucy@456"
 }, {
   "correo" : "diego.sanchez@example.com",
   "nombreUsuario" : "dsanchez",
   "nombre" : "Diego",
   "apellido" : "Sánchez",
-  "contrasena" : "dspass987",
-  "carritoProductos" : null
+  "contrasena" : "dspass987"
 }, {
   "correo" : "valeria.torres@example.com",
   "nombreUsuario" : "valet",
   "nombre" : "Valeria",
   "apellido" : "Torres",
-  "contrasena" : "torresVal",
-  "carritoProductos" : null
+  "contrasena" : "torresVal"
 }, {
   "correo" : "martin.reyes@example.com",
   "nombreUsuario" : "martinR",
   "nombre" : "Martín",
   "apellido" : "Reyes",
-  "contrasena" : "martin2023",
-  "carritoProductos" : null
+  "contrasena" : "martin2023"
 }, {
   "correo" : "florencia.mendez@example.com",
   "nombreUsuario" : "florM",
   "nombre" : "Florencia",
   "apellido" : "Méndez",
-  "contrasena" : "fmp@ss",
-  "carritoProductos" : null
+  "contrasena" : "fmp@ss"
 }, {
   "correo" : "carlos.diaz@example.com",
   "nombreUsuario" : "cdiaz",
   "nombre" : "Carlos",
   "apellido" : "Díaz",
-  "contrasena" : "cd1234",
-  "carritoProductos" : null
+  "contrasena" : "cd1234"
 }, {
   "correo" : "mariana.vera@example.com",
   "nombreUsuario" : "marivera",
   "nombre" : "Mariana",
   "apellido" : "Vera",
-  "contrasena" : "mv2025",
-  "carritoProductos" : null
+  "contrasena" : "mv2025"
 }, {
   "correo" : "javier.molina@example.com",
   "nombreUsuario" : "javmol",
   "nombre" : "Javier",
   "apellido" : "Molina",
-  "contrasena" : "javpass",
-  "carritoProductos" : null
+  "contrasena" : "javpass"
 }, {
   "correo" : "catalina.bustos@example.com",
   "nombreUsuario" : "catab",
   "nombre" : "Catalina",
   "apellido" : "Bustos",
-  "contrasena" : "cb!pass",
-  "carritoProductos" : null
+  "contrasena" : "cb!pass"
 }, {
   "correo" : "fernando.castillo@example.com",
   "nombreUsuario" : "fercast",
   "nombre" : "Fernando",
   "apellido" : "Castillo",
-  "contrasena" : "fc1234",
-  "carritoProductos" : null
+  "contrasena" : "fc1234"
 }, {
   "correo" : "isabel.romero@example.com",
   "nombreUsuario" : "isaR",
   "nombre" : "Isabel",
   "apellido" : "Romero",
-  "contrasena" : "isapass321",
-  "carritoProductos" : null
+  "contrasena" : "isapass321"
 }, {
   "correo" : "nicolas.ibarra@example.com",
   "nombreUsuario" : "nicoI",
   "nombre" : "Nicolás",
   "apellido" : "Ibarra",
-  "contrasena" : "ni!barra",
-  "carritoProductos" : null
+  "contrasena" : "ni!barra"
 }, {
   "correo" : "pamela.garcia@example.com",
   "nombreUsuario" : "pamg",
   "nombre" : "Pamela",
   "apellido" : "García",
-  "contrasena" : "pam321",
-  "carritoProductos" : null
+  "contrasena" : "pam321"
 }, {
   "correo" : "armaco@gmail.com",
   "nombreUsuario" : "Padrino",
   "nombre" : "",
   "apellido" : "",
-  "contrasena" : null,
-  "carritoProductos" : null
+  "contrasena" : null
 }, {
   "correo" : "q@",
   "nombreUsuario" : "Nose ",
   "nombre" : "",
   "apellido" : "",
-  "contrasena" : "1234",
-  "carritoProductos" : null
+  "contrasena" : "1234"
 }, {
   "correo" : "prueba2@est",
   "nombreUsuario" : "prueba2",
   "nombre" : null,
   "apellido" : null,
-  "contrasena" : "4321",
-  "carritoProductos" : null
+  "contrasena" : "4321"
 }, {
   "correo" : "ax23@a",
   "nombreUsuario" : "ax23",
-  "nombre" : null,
-  "apellido" : null,
-  "contrasena" : "1234",
-  "carritoProductos" : null
+  "nombre" : "Axander",
+  "apellido" : "Chavarri",
+  "contrasena" : "1234"
 }, {
   "correo" : "aaa@aaa",
   "nombreUsuario" : "jose",
   "nombre" : null,
   "apellido" : null,
-  "contrasena" : "4321",
-  "carritoProductos" : null
+  "contrasena" : "4321"
 }, {
   "correo" : "pedro@a",
   "nombreUsuario" : "pedro",
   "nombre" : null,
   "apellido" : null,
-  "contrasena" : "1234",
-  "carritoProductos" : null
+  "contrasena" : "1234"
+}, {
+  "correo" : "generico@generico.com",
+  "nombreUsuario" : "ax2",
+  "nombre" : "Pedro",
+  "apellido" : "Maradona",
+  "contrasena" : "1234"
 } ]

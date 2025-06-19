@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Usuario } from '../models/usuario.model';
+import {Producto} from '../models/producto.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class UsuarioService {
     });
   }
 
-  // POST típico para login (ajústalo a tu lógica)
+
   login(data: { nombreUsuario: string; contrasena: string }): Observable<any> {
     return this.http.post(`${this.apiUrl}/login`, data);
   }
@@ -40,6 +41,16 @@ export class UsuarioService {
   }
   getIdUsuario(): string {
     return this.idUsuario;
+  }
+
+  getUsuarioActual():  Observable<Usuario>  {
+    const url = `${this.apiUrl}/buscarUsuario/${this.idUsuario}`;
+    return this.http.get<Usuario>(url) ; // Retorna un objeto Usuario
+  }
+
+  actualizarUsuario(usuario: Usuario): Observable<Usuario> {
+    const url = `${this.apiUrl}/actualizarUsuario/${usuario.nombreUsuario}`;
+    return this.http.put<Usuario>(url, usuario);
   }
 
 }

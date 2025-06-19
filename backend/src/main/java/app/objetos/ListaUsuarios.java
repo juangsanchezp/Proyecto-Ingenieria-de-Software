@@ -54,6 +54,15 @@ public class ListaUsuarios {
         return false; // Usuario no encontrado
     }
 
+    public void actualizarUsuario(Usuario usuarioActualizado) {
+        for (int i = 0; i < usuarios.size(); i++) {
+            if (usuarios.get(i).getNombreUsuario().equals(usuarioActualizado.getNombreUsuario()) ) {
+                usuarios.set(i, usuarioActualizado);
+                UsuariosJSON.guardar(usuarios,urlJson);
+                return;
+            }
+        }
+    }
 
 
 }

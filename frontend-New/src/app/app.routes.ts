@@ -5,6 +5,7 @@ import { DetallesProductoComponent } from './detalles-producto/detalles-producto
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import {VenderComponent} from './vender/vender.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 export const routes: Routes = [
     {
@@ -23,7 +24,9 @@ export const routes: Routes = [
         component:SignupComponent,
     },{path:"vender",
     component:VenderComponent,
-    }
+    },{path: "perfil",
+    component:PerfilComponent,
+  }
 
 ];
 

@@ -2,6 +2,7 @@ package app.controllers;
 
 import app.objetos.ListaUsuarios;
 import app.objetos.Usuario;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +14,15 @@ public class UsuarioController {
 
     private ListaUsuarios listaUsuarios = new ListaUsuarios(); // Instancia compartida
 
+
+    @GetMapping("/buscarUsuario/{nombreUsuario}")
+    public ResponseEntity<Usuario> buscarUsuario(@PathVariable String nombreUsuario) {
+        Usuario usuario = listaUsuarios.buscarUsuario(nombreUsuario);
+        if (usuario == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(usuario);
+    }
 
 
     @PostMapping("/agregarUsuario")
@@ -53,6 +63,18 @@ public class UsuarioController {
 
 
     }
+
+    @PutMapping("/actualizarUsuario/{nombreUsuario}")
+    public ResponseEntity<Usuario> actualizarUsuario(@RequestBody Usuario usuarioActualizado) {
+        // Verificar si el usuario existe
+        if (listaUsuarios.buscarUsuario(usuarioActualizado.getNombreUsuario()) == null) {
+            return ResponseEntity.notFound().build();
+        }
+        // Actualizar el usuario en la lista
+        listaUsuarios.actualizarUsuario(usuarioActualizado);
+        return ResponseEntity.ok(usuarioActualizado);
+    }
+
 
 }
 

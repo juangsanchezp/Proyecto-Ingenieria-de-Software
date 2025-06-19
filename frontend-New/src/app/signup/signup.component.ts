@@ -13,6 +13,8 @@ export class SignupComponent {
   @ViewChild('correoInput') correoInput!: ElementRef<HTMLInputElement>;
   @ViewChild('contrasenaInput') contrasenaInput!: ElementRef<HTMLInputElement>;
   @ViewChild('confirmacionInput') confirmacionInput!: ElementRef<HTMLInputElement>;
+  @ViewChild('nombreInput') nombreInput!: ElementRef<HTMLInputElement>;
+  @ViewChild("apellidoInput") apellidoInput!: ElementRef<HTMLInputElement>;
 
   successMessage = '';
   errorMessage = '';
@@ -20,11 +22,15 @@ export class SignupComponent {
   constructor(private usuarioService: UsuarioService ,
               private router:Router) {}
 
+
+  // Método para manejar el envío del formulario
   onSubmit(event: Event): void {
     event.preventDefault();
 
     const nombreUsuario = this.nombreUsuarioInput.nativeElement.value;
     const correo = this.correoInput.nativeElement.value;
+    const nombre:string= this.nombreInput.nativeElement.value;
+    const apellido:string= this.apellidoInput.nativeElement.value;
     const contrasena = this.contrasenaInput.nativeElement.value;
     const confirmar = this.confirmacionInput.nativeElement.value;
 
@@ -38,6 +44,8 @@ export class SignupComponent {
       nombreUsuario,
       correo,
       contrasena
+      ,nombre,
+      apellido,
     };
 
     this.usuarioService.registrar(nuevoUsuario).subscribe({
