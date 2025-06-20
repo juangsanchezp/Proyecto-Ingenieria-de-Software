@@ -1,14 +1,15 @@
 import {Component, input, OnInit, signal} from '@angular/core';
 import { Producto } from '../shared/models/producto.model';
 import { ProductoService } from '../shared/services/producto.services';
-import { CurrencyPipe } from '@angular/common';
+import {CommonModule, CurrencyPipe} from '@angular/common';
 import { ProductoCarrito } from '../shared/models/producto-carrito';
 import { CartService } from '../shared/services/carrito-productos.service';
 import {RouterLink} from '@angular/router';
+import {UsuarioService} from '../shared/services/usuario.services';
 
 @Component({
   selector: 'app-detalles-producto',
-  imports: [CurrencyPipe,RouterLink],
+  imports: [CurrencyPipe,RouterLink,CommonModule],
   templateUrl: './detalles-producto.component.html',
 
 })
@@ -22,7 +23,9 @@ export class DetallesProductoComponent implements OnInit {
   mensaje = signal<string>(''); // ✅ Para mostrar el resultado al usuario
   stockDisponible = signal<number>(0); // Signal para el stock disponible
 
-  constructor(private productoService: ProductoService,private carritoService: CartService) {} // Inyecta el servicio
+  constructor(private productoService: ProductoService,
+              private carritoService: CartService,
+              private usuarioService:UsuarioService) {} // Inyecta el servicio
 
   ngOnInit():void {
     initFlowbite();
@@ -66,6 +69,11 @@ export class DetallesProductoComponent implements OnInit {
       const cantidadEnCarrito = this.carritoService.cantidadProductoEnCarritoPorId(this.producto.id);
       this.stockDisponible.set(this.producto.cantidadDisponible - cantidadEnCarrito);
     }
+  }
+
+  productoPropio(): boolean {
+    // Verifica si el producto tiene un idUsuario asociado y si es igual al id del usuario autenticado
+    return this.producto?.proveedorUsuario === this.usuarioService.getIdUsuario();
   }
 
 }

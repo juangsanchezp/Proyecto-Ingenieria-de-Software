@@ -2,18 +2,21 @@ import { Component, input, signal } from '@angular/core';
 import { Producto } from '../../shared/models/producto.model';
 import { RouterLink } from '@angular/router';
 import { CartService } from '../../shared/services/carrito-productos.service';
+import {CommonModule, NgIf} from '@angular/common';
+import {UsuarioService} from '../../shared/services/usuario.services';
 
 @Component({
   selector: 'app-home-product',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, CommonModule],
   templateUrl: './home-product.component.html',
 })
 export class HomeProductComponent {
   producto = input.required<Producto>();
   mensaje = signal<string>(''); // ✅ Para mostrar el resultado al usuario
 
-  constructor(private carritoService: CartService) {}
+  constructor(private carritoService: CartService ,
+              private usuarioService:UsuarioService) {}
 
   agregarAlCarrito(): void {
     const p = this.producto();
@@ -45,4 +48,10 @@ export class HomeProductComponent {
       this.mensaje.set('');
     }, 3000); // Limpia el mensaje después de 3 segundos
   }
+
+  productoPropio(): boolean {
+    // Verifica si el producto tiene un idUsuario asociado y si es igual al id del usuario autenticado
+    return this.producto().proveedorUsuario === this.usuarioService.getIdUsuario();
+  }
+
 }
