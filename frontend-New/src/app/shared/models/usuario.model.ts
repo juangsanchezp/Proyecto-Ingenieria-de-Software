@@ -7,5 +7,5 @@ export interface Usuario {
   nombre: string;
   apellido: string;
   contrasena: string;
-  carritoProductos: ProductoCarrito[];
+
 }

@@ -25,11 +25,6 @@ public class UsuarioController {
     }
 
 
-    @PostMapping("/agregarUsuario")
-    public ResponseEntity<Usuario> agregarUsuario(@RequestBody Usuario usuario) {
-        listaUsuarios.agregarUsuario(usuario);
-        return ResponseEntity.ok(usuario);
-    }
 
     @DeleteMapping("/eliminarUsuario/{nombreUsuario}")
     public ResponseEntity<Void> eliminarUsuario(@PathVariable String nombreUsuario) {
@@ -53,14 +48,12 @@ public class UsuarioController {
 
     @PostMapping("/registrarUsuario")
     public ResponseEntity<String> registrar(@RequestBody Usuario nuevoUsuario) {
-
         // Verificar si el usuario ya existe
         if (listaUsuarios.agregarUsuario(nuevoUsuario)) {
             return ResponseEntity.ok("Usuario registrado con éxito.");
         }
         // Si el usuario ya existe, devolver un error
         return ResponseEntity.status(HttpStatus.CONFLICT).body("El usuario ya existe.");
-
 
     }
 

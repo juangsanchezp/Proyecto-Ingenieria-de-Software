@@ -20,8 +20,8 @@ export class UsuarioService {
     this.idUsuario = id ? id : "";
   }
 
-  registrar(data: { nombreUsuario: string; correo: string; contrasena: string }): Observable<any> {
-    return this.http.post('http://localhost:8081/apiUsuarios/registrarUsuario', data, {
+  registrar(usuario: Usuario): Observable<any> {
+    return this.http.post('http://localhost:8081/apiUsuarios/registrarUsuario', usuario, {
       responseType: 'text'
     });
   }
