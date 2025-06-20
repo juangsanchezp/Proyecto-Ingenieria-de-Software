@@ -15,6 +15,10 @@ import {CommonModule} from '@angular/common';
 })
 export class VenderComponent implements OnInit {
 
+  //Variables para filtrar productos
+  terminoBusqueda: string = '';
+  productosFiltradosVender: Producto[] = [];
+
   productosVender: Producto[] = [];
   constructor(
     private productoService: ProductoService,
@@ -113,6 +117,9 @@ export class VenderComponent implements OnInit {
           producto.imagenUrl = producto.imagenUrl + '?' + new Date().getTime();
         }
       });
+
+      // Aplica el filtrado inicial
+      this.filtrarProductosVender();
     });
   }
 
@@ -124,4 +131,19 @@ export class VenderComponent implements OnInit {
       this.showAlert = false;
     }, 3000);
   }
+
+
+
+  filtrarProductosVender(): void {
+    const termino = this.terminoBusqueda.trim().toLowerCase();
+    if (!termino) {
+      this.productosFiltradosVender = this.productosVender;
+      return;
+    }
+    this.productosFiltradosVender = this.productosVender.filter(producto =>
+      producto.nombreProducto.toLowerCase().includes(termino) ||
+      producto.categoria.toLowerCase().includes(termino)
+    );
+  }
+
 }
