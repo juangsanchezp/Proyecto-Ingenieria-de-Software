@@ -1,5 +1,5 @@
 import {ProductoCarrito} from '../shared/models/producto-carrito';
-import {ProductoVenderComponent} from './components/producto-vender/producto-vender.component';
+import {ProductoVenderComponent} from './producto-vender/producto-vender.component';
 
 import {Component, OnInit} from '@angular/core';
 import {ProductoService} from '../shared/services/producto.services';

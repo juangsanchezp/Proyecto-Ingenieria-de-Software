@@ -160,4 +160,10 @@
   "nombre" : "Pedro",
   "apellido" : "Maradona",
   "contrasena" : "1234"
+}, {
+  "correo" : "generico@3gene",
+  "nombreUsuario" : "Prueba3",
+  "nombre" : "Yiusepe",
+  "apellido" : "GOmez",
+  "contrasena" : "4321"
 } ]

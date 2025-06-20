@@ -1,4 +1,4 @@
-import {Component, EventEmitter, input, OnInit, output, Output, signal} from '@angular/core';
+import {Component, EventEmitter, input, OnChanges, OnInit, output, Output, signal, SimpleChanges} from '@angular/core';
 import { ProductoCarrito } from '../../shared/models/producto-carrito';
 import { CartService } from '../../shared/services/carrito-productos.service';
 import { RouterLink } from '@angular/router';
@@ -11,7 +11,7 @@ import { CurrencyPipe } from '@angular/common';
 
 })
 
-export class ProductoCarritoComponent implements OnInit {
+export class ProductoCarritoComponent implements OnInit, OnChanges {
   constructor(private carritoService: CartService) {} // Inyecta el servicio
 
   // Esto hace que angular provea los datos del producto en el carrito
@@ -25,6 +25,13 @@ export class ProductoCarritoComponent implements OnInit {
 
   ngOnInit(): void {
     this.actualizarTotal()
+  }
+
+  // Este método se llama cuando hay cambios en las entradas del componente
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['productoCarrito']) {
+      this.actualizarTotal();
+    }
   }
 
 

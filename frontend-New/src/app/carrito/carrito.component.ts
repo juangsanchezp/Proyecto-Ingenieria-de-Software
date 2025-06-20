@@ -7,28 +7,27 @@ import { CartService } from '../shared/services/carrito-productos.service';
 
 @Component({
   selector: 'app-carrito',
-  imports: [RouterLink, ProductoCarritoComponent,CurrencyPipe],
+  imports: [RouterLink, ProductoCarritoComponent, CurrencyPipe],
   templateUrl: './carrito.component.html',
 })
 export class CarritoComponent implements OnInit {
   constructor(private carritoService: CartService) {}
-  carritoProductos:ProductoCarrito[]= [];
+  carritoProductos: ProductoCarrito[] = [];
   total: number = 0;
 
   ngOnInit(): void {
     initFlowbite();
     this.actualizarCarrito();
-
-
-
   }
 
-    actualizarCarrito(): void {
-      this.carritoProductos = this.carritoService.getCart();
-
-    //Calculando le total
-    this.total = this.carritoProductos.reduce((acc, val) =>acc + val.producto.precio * val.cantidad,0); {
-    }}
+  actualizarCarrito(): void {
+    this.carritoProductos = this.carritoService.getCart();
+    // Calculando el total
+    this.total = this.carritoProductos.reduce(
+      (acc, val) => acc + val.producto.precio * val.cantidad,
+      0
+    );
+  }
 
 
 }

@@ -23,6 +23,7 @@ export class NavbarComponent {
 
   cerrarSesion() {
     this.usuarioService.cerrarSesion();
+    this.carritoService.clearCart();
   }
 
 }

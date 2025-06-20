@@ -7,8 +7,23 @@ import { ProductoCarrito } from '../models/producto-carrito';
 })
 export class CartService {
   private cart: ProductoCarrito[] = [];
+  private readonly STORAGE_KEY = 'cart';
 
-  constructor() { }
+  constructor() {
+    // Cargar carrito del sessionStorage al iniciar el servicio
+    this.loadCartFromSessionStorage();
+  }
+
+  private saveCartToSessionStorage() {
+    sessionStorage.setItem(this.STORAGE_KEY, JSON.stringify(this.cart));
+  }
+
+  private loadCartFromSessionStorage() {
+    const data = sessionStorage.getItem(this.STORAGE_KEY);
+    if (data) {
+      this.cart = JSON.parse(data);
+    }
+  }
 
   addToCart(product: Producto, cantidad: number): string {
     const existingProduct = this.cart.find(item => item.producto.id === product.id);
@@ -24,17 +39,20 @@ export class CartService {
       }
       this.cart.push({ producto: product, cantidad: cantidad });
     }
+    this.saveCartToSessionStorage();
     return 'Producto agregado al carrito.';
   }
 
   removeFromCart(productoId: number) {
     this.cart = this.cart.filter(item => item.producto.id !== productoId);
+    this.saveCartToSessionStorage();
   }
 
   decreaseProductFromCart(productoId: number) {
     const item = this.cart.find(p => p.producto.id === productoId);
     if (item && item.cantidad > 1) {
       item.cantidad -= 1;
+      this.saveCartToSessionStorage();
     }
   }
 
@@ -44,7 +62,9 @@ export class CartService {
 
   clearCart() {
     this.cart = [];
+    this.saveCartToSessionStorage();
   }
+
   cantidadProductoEnCarrito(): number {
     return this.cart.reduce((total, item) => total + item.cantidad, 0);
   }
@@ -53,5 +73,4 @@ export class CartService {
     const item = this.cart.find(p => p.producto.id === productoId);
     return item ? item.cantidad : 0;
   }
-
 }

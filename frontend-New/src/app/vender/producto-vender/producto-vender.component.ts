@@ -1,9 +1,9 @@
 import {AfterViewInit, Component, input, OnInit, output} from '@angular/core';
-import {ProductoCarrito} from '../../../shared/models/producto-carrito';
+import {ProductoCarrito} from '../../shared/models/producto-carrito';
 import {CommonModule, CurrencyPipe} from '@angular/common';
-import {Producto} from '../../../shared/models/producto.model';
+import {Producto} from '../../shared/models/producto.model';
 import {FormsModule} from '@angular/forms';
-import {ProductoService} from '../../../shared/services/producto.services';
+import {ProductoService} from '../../shared/services/producto.services';
 import {RouterLink} from '@angular/router';
 
 @Component({
