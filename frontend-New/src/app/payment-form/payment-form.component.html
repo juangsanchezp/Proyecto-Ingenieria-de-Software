@@ -1,0 +1,65 @@
+
+<div class="payment-card">
+    <div class="card-header">
+      <div class="card-header-icon">
+        
+      </div>
+      <div class="card-header-text">Card</div>
+    </div>
+  
+    <form class="payment-form">
+      <div class="form-group">
+        <label for="cardNumber">Tarjeta</label>
+        <input
+          type="text"
+          id="cardNumber"
+          placeholder="1234 1234 1234 1234"
+          formControlName="cardNumber"
+          maxlength="19"
+        />
+        <div class="card-logos">
+          <img src="assets/visa.png" alt="Visa" />
+          <img src="assets/mastercard.png" alt="Mastercard" />
+          <img src="assets/amex.png" alt="American Express" />
+          <img src="assets/discover.png" alt="Discover" />
+        </div>
+      </div>
+  
+      <div class="form-row">
+        <div class="form-group expiration-date">
+          <label for="expirationDate">Fecha de caducidad</label>
+          <input
+            type="text"
+            id="expirationDate"
+            placeholder="MM / YY"
+            formControlName="expirationDate"
+            maxlength="5"
+          />
+        </div>
+  
+        <div class="form-group security-code">
+          <label for="securityCode">Código de seguridad</label>
+          <div class="security-code-input-wrapper">
+            <input
+              type="text"
+              id="securityCode"
+              placeholder="CVC"
+              formControlName="securityCode"
+              maxlength="4"
+            />
+            <span class="info-icon">?</span>
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-group country-select">
+        <label for="country">País</label>
+        <select id="country" formControlName="country">
+          <option value="">Seleccione un país</option>
+          <option value="VE">Venezuela</option>
+          </select>
+      </div>
+  
+      <button type="submit" class="pay-button">PAGAR</button>
+    </form>
+  </div>

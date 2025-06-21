@@ -1,0 +1,131 @@
+.payment-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 500px;
+    margin: 50px auto; /* Center the card on the page */
+    font-family: sans-serif;
+  }
+  
+  .card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+  }
+  
+  .card-header-icon {
+    background-color: #f0f2f5; /* Light grey background for the icon */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    color: #333; /* Icon color */
+  }
+  
+  .card-header-icon .material-icons {
+    font-size: 24px;
+  }
+  
+  .card-header-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    position: relative; /* For positioning card logos */
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+    font-size: 0.9em;
+  }
+  
+  input[type="text"],
+  select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Include padding in width */
+  }
+  
+  input[type="text"]:focus,
+  select:focus {
+    outline: none;
+    border-color: #007bff; /* Highlight on focus */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  .card-logos {
+    position: absolute;
+    right: 15px;
+    top: 38px; /* Adjust based on label and input height */
+    display: flex;
+    gap: 8px;
+  }
+  
+  .card-logos img {
+    height: 20px; /* Adjust logo size */
+    opacity: 0.7;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 20px; /* Space between expiration date and security code */
+  }
+  
+  .expiration-date,
+  .security-code {
+    flex: 1; /* Distribute space equally */
+  }
+  
+  .security-code-input-wrapper {
+    position: relative;
+  }
+  
+  .security-code-input-wrapper .info-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #eee;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+    cursor: pointer;
+    color: #666;
+  }
+  
+  .pay-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff; /* Blue as in the image */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .pay-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }

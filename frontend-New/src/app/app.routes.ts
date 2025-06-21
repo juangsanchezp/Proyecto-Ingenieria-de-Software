@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import {VenderComponent} from './vender/vender.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { PaymentFormComponent } from './payment-form/payment-form.component';
 
 export const routes: Routes = [
     {
@@ -26,7 +27,9 @@ export const routes: Routes = [
     component:VenderComponent,
     },{path: "perfil",
     component:PerfilComponent,
-  }
+  },{path: "payment-form",
+  component:PaymentFormComponent,
+}
 
 ];
 
