@@ -1,5 +1,5 @@
 package app.objetos;
 
-public class CarritoProductos {
 
+public class CarritoProductos {
 }

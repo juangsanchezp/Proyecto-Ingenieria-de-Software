@@ -172,4 +172,16 @@
   "nombre" : "sdfsdf",
   "apellido" : "sdfsf",
   "contrasena" : "1234"
+}, {
+  "correo" : "jgsp@gmail.com",
+  "nombreUsuario" : "jgsp",
+  "nombre" : "John",
+  "apellido" : "Williams",
+  "contrasena" : "12355"
+}, {
+  "correo" : "palermillou@gmail.com",
+  "nombreUsuario" : "Paler",
+  "nombre" : "Palerm",
+  "apellido" : "Illopillo",
+  "contrasena" : "7410852"
 } ]
